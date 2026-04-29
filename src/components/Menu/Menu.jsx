@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
-import "./menu.css";
+import "./Menu.css";
 
 export default function Menu() {
     const [open, setOpen] = useState(false);
