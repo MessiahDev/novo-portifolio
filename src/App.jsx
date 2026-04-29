@@ -1,5 +1,4 @@
 import "./App.css"
-import "./components/Menu/Menu.css"
 import Menu from "./components/Menu/Menu"
 import alex from "./assets/alex.jpg"
 
