@@ -1,0 +1,46 @@
+@media (max-width: 900px) {
+    .menu {
+        display: block;
+        width: 100%;
+        height: auto;
+        left: 0;
+        top: -100%;
+        padding: 20px;
+        z-index: 999;
+    }
+
+    .menu.active {
+        top: 0;
+    }
+
+    .menu ul {
+        display: flex;
+        flex-direction: column;
+        gap: 1px;
+        left: 0;
+    }
+
+    .menu ul li {
+        display: flex;
+        justify-content: start;
+    }
+
+    .menu-btn {
+        display: flex;
+    }
+
+    .menu-btn:hover {
+        cursor: pointer;
+    }
+
+    .contact-btn {
+        width: 40%;
+    }
+
+    .overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 998;
+    }
+}
