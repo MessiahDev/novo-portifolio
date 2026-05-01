@@ -10,7 +10,6 @@
     color: white;
     overflow: hidden;
     font-weight: 500;
-    pointer-events: none;
 }
 
 .parallax-bg {
@@ -27,7 +26,7 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-
+    pointer-events: none;
     z-index: -1;
 }
 
@@ -38,6 +37,7 @@
     color: white;
     cursor: pointer;
     animation: bounceFade 1.5s infinite;
+    z-index: 9999;
 }
 
 .scroll-area {
