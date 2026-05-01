@@ -1,5 +1,6 @@
 .inicio {
     position: relative;
+    z-index: 1;
     height: 100vh;
     width: 100%;
     display: flex;
@@ -37,21 +38,18 @@
     color: white;
     cursor: pointer;
     animation: bounceFade 1.5s infinite;
-    z-index: 9999;
 }
 
 .scroll-area {
     position: absolute;
     bottom: 20px;
-
     width: 60px;
     height: 60px;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
     cursor: pointer;
+    z-index: 2;
 }
 
 @keyframes bounceFade {
