@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react"
+import { FaFacebookF, FaTwitter, FaLinkedinIn, FaGithub, FaInstagram } from "react-icons/fa";
 import "./App.css"
 import Menu from "./components/Menu/Menu"
 import alex from "./assets/alex.jpg"
@@ -8,15 +10,16 @@ function goToSection(sectionId) {
   if (!target) return
 
   const start = window.scrollY
-  const end = target.offsetTop
+  const headerOffset = window.innerWidth <= 900 ? 65 : 0
+  const end = target.offsetTop - headerOffset
   const duration = 1400
 
   let startTime = null
 
-  function easeInOutCubic(t) {
+  function easeInOutQuart(t) {
     return t < 0.5
-    ? 8 * t * t * t * t
-    : 1 - Math.pow(-2 * t + 2, 4) / 2
+      ? 8 * t * t * t * t
+      : 1 - Math.pow(-2 * t + 2, 4) / 2
   }
 
   function animation(currentTime) {
@@ -24,7 +27,7 @@ function goToSection(sectionId) {
     const timeElapsed = currentTime - startTime
     const progress = Math.min(timeElapsed / duration, 1)
 
-    const ease = easeInOutCubic(progress)
+    const ease = easeInOutQuart(progress)
     window.scrollTo(0, start + (end - start) * ease)
 
     if (timeElapsed < duration) {
@@ -36,37 +39,142 @@ function goToSection(sectionId) {
 }
 
 export default function App() {
+  const [activeSection, setActiveSection] = useState("inicio")
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = document.querySelectorAll("section")
+
+      let current = ""
+
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 150
+        const sectionHeight = section.clientHeight
+
+        if (
+          window.scrollY >= sectionTop &&
+          window.scrollY < sectionTop + sectionHeight
+        ) {
+          current = section.getAttribute("id")
+        }
+      })
+
+      if (current) setActiveSection(current)
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
   return (
-    <div>
+    <div className="app-layout">
+
       <aside className="main-aside">
         <div className="profile-container">
           <img className="img-profile" src={alex} alt="Profile" />
           <h2 className="name-profile"><strong>Alex Messias</strong></h2>
         </div>
+
         <nav className="navbar">
           <ul>
-            <a onClick={() => goToSection("inicio")}>Início</a>
-            <a onClick={() => goToSection("sobre")}>Sobre mim</a>
-            <a onClick={() => goToSection("servicos")}>O que eu faço</a>
-            <a onClick={() => goToSection("resumo")}>Resumo</a>
-            <a onClick={() => goToSection("depoimentos")}>Depoimentos</a>
-            <a onClick={() => goToSection("contato")}>Contato</a>
-            <button type="button" onClick={() => goToSection("contato")}>Entrar em contato</button>
+            <a
+              className={activeSection === "inicio" ? "active" : ""}
+              onClick={() => goToSection("inicio")}
+            >
+              Início
+            </a>
+
+            <a
+              className={activeSection === "sobre" ? "active" : ""}
+              onClick={() => goToSection("sobre")}
+            >
+              Sobre mim
+            </a>
+
+            <a
+              className={activeSection === "servicos" ? "active" : ""}
+              onClick={() => goToSection("servicos")}
+            >
+              O que eu faço
+            </a>
+
+            <a
+              className={activeSection === "resumo" ? "active" : ""}
+              onClick={() => goToSection("resumo")}
+            >
+              Resumo
+            </a>
+
+            <a
+              className={activeSection === "depoimentos" ? "active" : ""}
+              onClick={() => goToSection("depoimentos")}
+            >
+              Depoimentos
+            </a>
+
+            <a
+              className={activeSection === "contato" ? "active" : ""}
+              onClick={() => goToSection("contato")}
+            >
+              Contato
+            </a>
+
+            <button onClick={() => goToSection("contato")}>
+              Entrar em contato
+            </button>
           </ul>
         </nav>
+        <div className="social-icons">
+          <a href="#" target="_blank" rel="noreferrer">
+            <FaFacebookF />
+          </a>
+
+          <a href="#" target="_blank" rel="noreferrer">
+            <FaTwitter />
+          </a>
+
+          <a href="#" target="_blank" rel="noreferrer">
+            <FaLinkedinIn />
+          </a>
+
+          <a href="#" target="_blank" rel="noreferrer">
+            <FaGithub />
+          </a>
+
+          <a href="#" target="_blank" rel="noreferrer">
+            <FaInstagram />
+          </a>
+        </div>
       </aside>
 
-      <Menu />
+      <Menu goToSection={goToSection} />
 
       <div className="container">
-        <section id="inicio"><Inicio goToSection={goToSection} /></section>
-        <section id="sobre">Sobre mim</section>
-        <section id="servicos">O que eu faço</section>
-        <section id="resumo">Resumo</section>
-        <section id="depoimentos">Depoimentos</section>
-        <section id="contato">Contato</section>
+        <section id="inicio">
+          <Inicio goToSection={goToSection} />
+        </section>
+
+        <section id="sobre">
+          <div className="section-content">Sobre mim</div>
+        </section>
+
+        <section id="servicos">
+          <div className="section-content">O que eu faço</div>
+        </section>
+
+        <section id="resumo">
+          <div className="section-content">Resumo</div>
+        </section>
+
+        <section id="depoimentos">
+          <div className="section-content">Depoimentos</div>
+        </section>
+
+        <section id="contato">
+          <div className="section-content">Contato</div>
+        </section>
       </div>
 
     </div>
-  );
+  )
 }

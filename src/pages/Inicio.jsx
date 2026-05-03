@@ -19,8 +19,18 @@ export default function Inicio({ goToSection }) {
         <div className="inicio">
             <div className="parallax-bg" ref={bgRef}></div>
 
-            <p>Bem-vindo</p>
-            <h2>Desenvolvedor Full-Stack</h2>
+            <p className="intro-text">Bem-vindo</p>
+
+            <h2 className="main-title">
+                Desenvolvedor Full-Stack
+            </h2>
+
+            <button
+                className="cta-btn"
+                onClick={() => goToSection("contato")}
+            >
+                Contate-me
+            </button>
 
             <div
                 className="scroll-area"
