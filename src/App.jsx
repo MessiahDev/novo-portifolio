@@ -125,23 +125,23 @@ export default function App() {
           </ul>
         </nav>
         <div className="social-icons">
-          <a href="#" target="_blank" rel="noreferrer">
+          <a href="https://www.facebook.com/alex.messias.859182?locale=pt_BR" target="_blank" rel="noreferrer" title="Facebook">
             <FaFacebookF />
           </a>
 
-          <a href="#" target="_blank" rel="noreferrer">
+          <a href="https://x.com/AlexMes60607703" target="_blank" rel="noreferrer" title="Twitter">
             <FaTwitter />
           </a>
 
-          <a href="#" target="_blank" rel="noreferrer">
+          <a href="https://www.linkedin.com/in/alex-alle/" target="_blank" rel="noreferrer" title="LinkedIn">
             <FaLinkedinIn />
           </a>
 
-          <a href="#" target="_blank" rel="noreferrer">
+          <a href="https://github.com/MessiahDev" target="_blank" rel="noreferrer" title="GitHub">
             <FaGithub />
           </a>
 
-          <a href="#" target="_blank" rel="noreferrer">
+          <a href="https://www.instagram.com/alexmessias18/" target="_blank" rel="noreferrer" title="Instagram">
             <FaInstagram />
           </a>
         </div>

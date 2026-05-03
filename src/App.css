@@ -4,16 +4,15 @@
 
 .main-aside {
     flex-shrink: 0;
-
     display: grid;
-    grid-template-rows: 250px 2fr 18px;
+    grid-template-rows: 240px 2fr 20px;
     justify-content: center;
     align-items: center;
     text-align: center;
     background: #111418;
     color: #fafafae6;
     padding: 13px;
-    width: 280px;
+    width: 260px;
     height: 100vh;
     position: sticky;
     top: 0;
@@ -22,11 +21,12 @@
 
 .profile-container {
     width: 230px;
+    margin-top: 15px;
 }
 
 .name-profile {
     font-weight: 300;
-    font-size: 22px;
+    font-size: 24px;
 }
 
 .img-profile {
@@ -46,6 +46,7 @@ ul {
     flex-direction: column;
     justify-content: space-around;
     list-style: none;
+    margin-bottom: 25px;
 }
 
 ul a {
@@ -66,7 +67,7 @@ ul a.active {
 ul button {
     width: fit-content;
     align-self: center;
-    padding: 9px 20px;
+    padding: 10px 20px;
     margin-top: 20px;
     border-radius: 30px;
     background: #f0340bc7;
@@ -145,6 +146,16 @@ section {
 
     .name-profile {
         margin-left: 10px;
+        font-size: 18px;
+    }
+
+    .social-icons {
+        margin-right: 45px;
+    }
+
+    .social-icons a {
+        width: 30px;
+        height: 30px;
         font-size: 18px;
     }
 }
