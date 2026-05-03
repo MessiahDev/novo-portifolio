@@ -70,9 +70,13 @@ export default function App() {
     <div className="app-layout">
 
       <aside className="main-aside">
-        <div className="profile-container">
+        <div className="profile-container" onClick={() => goToSection("inicio")}>
           <img className="img-profile" src={alex} alt="Profile" />
-          <h2 className="name-profile"><strong>Alex Messias</strong></h2>
+          <a onClick={() => goToSection("inicio")}>
+            <h2 className="name-profile">
+              <strong>Alex Messias</strong>
+            </h2>
+          </a>
         </div>
 
         <nav className="navbar">
