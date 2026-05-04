@@ -1,4 +1,4 @@
-import "./styles/app.css"
+import "./styles/App.css"
 
 import { useActiveSection } from "./hooks/useActiveSection"
 import { goToSection } from "./utils/Scroll"
