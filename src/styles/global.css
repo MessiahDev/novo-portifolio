@@ -1,3 +1,21 @@
+:root {
+    /* Fundos */
+    --color-bg-primary:   #111418;
+    --color-bg-secondary: #212529;
+    --color-bg-card:      #343A40;
+
+    /* Texto */
+    --color-text-primary: #fafafae6;
+    --color-text-white:   #ffffff;
+
+    /* Marca */
+    --color-accent:       #C24023;
+    --color-accent-hover: #BF2D10;
+
+    /* Neutros */
+    --color-muted: #6C757D;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -10,5 +28,4 @@ body {
 
 a {
     text-decoration: none;
-    color: #fafafae6;
 }
