@@ -1,4 +1,4 @@
-import { SOCIAL_LINKS } from "../../constants/Navigation"
+import { SOCIAL_LINKS } from "../../constants/navigation.jsx"
 import "./SocialIcons.css"
 
 export default function SocialIcons() {

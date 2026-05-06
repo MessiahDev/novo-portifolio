@@ -1,4 +1,4 @@
-ul {
+.navbar-list {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -6,29 +6,36 @@ ul {
     margin-bottom: 25px;
 }
 
-ul a {
+.navbar-link {
     padding: 10px 0;
-    color: #fafafae6;
+    color: var(--color-text-white);
     text-decoration: none;
     cursor: pointer;
+    transition: color 0.2s ease;
 }
 
-ul a:hover { color: #BF2D10; }
-ul a.active { color: #BF2D10; }
+.navbar-link:hover        { color: var(--color-accent-hover); }
+.navbar-link--active      { color: var(--color-accent-hover); }
 
-ul button {
+.navbar-cta {
     width: fit-content;
     align-self: center;
     padding: 10px 20px;
     margin-top: 20px;
     border-radius: 30px;
-    background: #f0340bc7;
-    border: 2px solid #ec441ec7;
-    color: #fff;
+    background: var(--color-accent-btn);
+    border: 2px solid var(--color-accent-btn);
+    color: var(--color-text-white);
     cursor: pointer;
     font-size: 16px;
     font-weight: 700;
     letter-spacing: 0.1px;
+    transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.navbar-cta:hover {
+    background: var(--color-accent-hover);
+    border-color: var(--color-accent-hover);
 }
 
 @media (max-width: 992px) {

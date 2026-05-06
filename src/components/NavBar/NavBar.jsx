@@ -1,21 +1,24 @@
-import { NAV_LINKS } from "../../constants/Navigation"
+import { NAV_LINKS } from "../../constants/navigation.jsx"
 import "./NavBar.css"
 
 export default function NavBar({ activeSection, goToSection }) {
     return (
         <nav className="navbar">
-            <ul>
+            <ul className="navbar-list">
                 {NAV_LINKS.map(({ id, label }) => (
                     <a
                         key={id}
-                        className={activeSection === id ? "active" : ""}
+                        className={`navbar-link${activeSection === id ? " navbar-link--active" : ""}`}
                         onClick={() => goToSection(id)}
                     >
                         {label}
                     </a>
                 ))}
 
-                <button onClick={() => goToSection("contato")}>
+                <button
+                    className="navbar-cta"
+                    onClick={() => goToSection("contato")}
+                >
                     Entrar em contato
                 </button>
             </ul>

@@ -10,7 +10,7 @@
     justify-content: center;
     width: 35px;
     height: 35px;
-    color: #fafafae6;
+    color: var(--color-text-primary);
     font-size: 14px;
 }
 

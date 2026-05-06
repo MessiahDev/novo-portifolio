@@ -1,24 +1,66 @@
 import SectionTitle from "../../components/SectionTitle/SectionTitle"
+import { useCountUp } from "../../hooks/useCountUp"
+import { STATS, INFO } from "../../constants/sobre"
 import "./Sobre.css"
+
+function StatItem({ value, suffix, label }) {
+    const { count, ref } = useCountUp(value)
+    return (
+        <div className="stat-item" ref={ref}>
+            <span className="stat-number">{count}{suffix}</span>
+            <span className="stat-label">{label}</span>
+        </div>
+    )
+}
 
 export default function Sobre() {
     return (
         <div className="container-sobre">
             <SectionTitle back="SOBRE MIM" front="Um pouco sobre mim" />
 
-            <div className="grid-wrapper">
-                <div className="row-2col">
-                    <div className="cell">Coluna A</div>
-                    <div className="cell">Coluna B</div>
+            <div className="sobre-grid">
+                <div className="sobre-bio">
+                    <h3 className="bio-headline">
+                        Eu sou <span className="bio-name">Alex Messias,</span> um desenvolvedor Full-Stack
+                    </h3>
+                    <p className="bio-text">
+                        Já estou na área há mais de 8 anos profissionalmente, mas comecei a programar desde os 14 anos de idade, movido pela curiosidade de entender como as coisas funcionam por trás das telas.
+                    </p>
+                    <p className="bio-text">
+                        Ao longo da minha trajetória, desenvolvi soluções para empresas de diferentes segmentos — desde startups em fase inicial até corporações consolidadas no mercado, sempre com foco em qualidade, desempenho e experiência do usuário.
+                    </p>
+                    <p className="bio-text">
+                        Hoje atuo como desenvolvedor fullstack, combinando habilidades sólidas em front-end e back-end para criar aplicações completas, escaláveis e com interfaces que realmente fazem sentido para quem usa.
+                    </p>
                 </div>
 
-                <div className="row-4col">
-                    <span className="divider-75" aria-hidden="true"></span>
-                    <div className="cell">Coluna C</div>
-                    <div className="cell">Coluna D</div>
-                    <div className="cell">Coluna E</div>
-                    <div className="cell">Coluna F</div>
+                <div className="sobre-info">
+                    <ul className="info-list">
+                        {INFO.map(({ label, value, accent }) => (
+                            <li key={label} className="info-item">
+                                <span className="info-label">{label}:</span>
+                                <span className={`info-value${accent ? " accent" : ""}`}>{value}</span>
+                            </li>
+                        ))}
+                    </ul>
+
+                    
+                    <a
+                        className="whatsapp-btn"
+                        href="https://wa.me/5521998138903"
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        Enviar via WhatsApp
+                    </a>
                 </div>
+            </div>
+
+            <div className="stats-row">
+                <span className="divider-75" aria-hidden="true"></span>
+                {STATS.map((stat) => (
+                    <StatItem key={stat.label} {...stat} />
+                ))}
             </div>
         </div>
     )

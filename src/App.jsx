@@ -9,6 +9,7 @@ import NavBar from "./components/NavBar/NavBar"
 import SocialIcons from "./components/SocialIcons/SocialIcons"
 import Inicio from "./pages/Inicio/Inicio"
 import Sobre from "./pages/Sobre/Sobre"
+import Servicos from "./pages/Servicos/Servicos"
 
 export default function App() {
     const activeSection = useActiveSection()
@@ -25,9 +26,9 @@ export default function App() {
             <Menu goToSection={goToSection} />
 
             <div className="container-inicio">
-                <section id="inicio">      <Inicio goToSection={goToSection} />                   </section>
+                <section id="inicio">      <Inicio goToSection={goToSection} />                    </section>
                 <section id="sobre">       <Sobre />                                               </section>
-                <section id="servicos">    <div className="section-content">O que eu faço</div>   </section>
+                <section id="servicos">    <Servicos />                                            </section>
                 <section id="resumo">      <div className="section-content">Resumo</div>           </section>
                 <section id="depoimentos"> <div className="section-content">Depoimentos</div>      </section>
                 <section id="contato">     <div className="section-content">Contato</div>          </section>
