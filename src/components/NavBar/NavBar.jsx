@@ -1,4 +1,4 @@
-import { NAV_LINKS } from "../../constants/navigation.jsx"
+import { NAV_LINKS } from "../../constants/Navigation.jsx"
 import "./NavBar.css"
 
 export default function NavBar({ activeSection, goToSection }) {
