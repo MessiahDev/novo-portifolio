@@ -1,66 +1,147 @@
-.menu-btn {
+:root {
+    /* Fundos */
+    --color-bg-primary:   #111418;
+    --color-bg-secondary: #212529;
+    --color-bg-card:      #343A40;
+
+    /* Texto */
+    --color-text-primary: #AAB1B8;
+    --color-text-white:   #ffffff;
+
+    /* Marca */
+    --color-accent:       #C24023;
+    --color-accent-hover: #BF2D10;
+    --color-accent-btn:   #ec441e;
+
+    /* Neutros */
+    --color-muted: #6C757D;
+    --color-yellow: #FFC107;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* ── Toggle button ───────────────────────────────────────── */
+.nav-toggle {
     display: none;
-    font-size: 22px;
     position: fixed;
     top: 10px;
     right: 10px;
     z-index: 1001;
-    background: transparent;
-    border: none;
-    color: #fafafae6;
-    cursor: pointer;
     width: 45px;
     height: 45px;
     align-items: center;
     justify-content: center;
+    padding: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
 }
 
-.menu {
+/* ── Burger bars ─────────────────────────────────────────── */
+.nav-toggle__bar,
+.nav-toggle__bar::before,
+.nav-toggle__bar::after {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background-color: var(--color-text-white);
+    position: absolute;
+    transition: 0.3s;
+}
+
+.nav-toggle__bar {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.nav-toggle__bar::before,
+.nav-toggle__bar::after {
+    content: "";
+    left: 0;
+}
+
+.nav-toggle__bar::before { top: -7px; }
+.nav-toggle__bar::after  { top:  7px; }
+
+/* ── Burger → ✕ ──────────────────────────────────────────── */
+.nav-toggle--open .nav-toggle__bar {
+    background-color: transparent;
+}
+
+.nav-toggle--open .nav-toggle__bar::before {
+    transform: translate(0, 7px) rotate(45deg);
+}
+
+.nav-toggle--open .nav-toggle__bar::after {
+    transform: translate(0, -7px) rotate(-45deg);
+}
+
+/* ── Overlay ─────────────────────────────────────────────── */
+.nav-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+}
+
+/* ── Drawer ──────────────────────────────────────────────── */
+.nav-drawer {
     position: fixed;
     left: 0;
     top: 65px;
     width: 100%;
     padding: 20px 20px 0 20px;
-    background: #030303;
-    color: #fff;
+    background: var(--color-bg-primary);
+    color: var(--color-text-white);
     transform: translateY(-125%);
+    transition: transform 0.3s ease;
     z-index: 1000;
 }
 
-.menu.active {
+.nav-drawer--open {
     transform: translateY(0);
-    transition: all 0.3s ease;
 }
 
-.menu ul {
+/* ── Nav list ────────────────────────────────────────────── */
+.nav-drawer__list {
     list-style: none;
     display: flex;
     flex-direction: column;
 }
 
-.menu li {
+.nav-drawer__item {
     width: 100%;
     text-align: left;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.menu a {
+.nav-drawer__link {
     display: block;
     padding: 8px 0;
-    color: #fafafae6;
+    color: var(--color-text-white);
     text-decoration: none;
     cursor: pointer;
 }
 
-.menu a:hover {
-    color: #BF2D10;
+.nav-drawer__link:hover,
+.nav-drawer__link--active {
+    color: var(--color-accent-hover);
 }
 
-.menu a.active {
-    color: #BF2D10;
-}
-
-.contact-btn {
+/* ── CTA button ──────────────────────────────────────────── */
+.nav-drawer__cta {
     display: flex;
     align-self: center;
     margin: 24px auto;
@@ -68,16 +149,16 @@
     font-size: 16px;
     font-weight: 700;
     letter-spacing: 0.1px;
-    font-weight: 700;
     border-radius: 25px;
-    background: #f0340bc7;
-    border: 2px solid #ec441ec7;
-    color: #fafafae6;
+    background: var(--color-accent);
+    border: 2px solid var(--color-accent-btn);
+    color: var(--color-text-white);
     cursor: pointer;
 }
 
+/* ── Responsive ──────────────────────────────────────────── */
 @media (max-width: 992px) {
-    .menu-btn {
+    .nav-toggle {
         display: flex;
     }
 }

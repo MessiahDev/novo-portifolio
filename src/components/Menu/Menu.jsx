@@ -1,71 +1,54 @@
 import { useState, useEffect } from "react";
-import { FaBars, FaTimes } from "react-icons/fa";
 import "./Menu.css";
 
 export default function Menu({ goToSection }) {
-    const [open, setOpen] = useState(false);
-    const [closing, setClosing] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
 
-    const openMenu = () => {
-        setOpen(true);
-    };
+    const openMenu  = () => setIsOpen(true);
+    const closeMenu = () => setIsOpen(false);
 
-    const closeMenu = () => {
-        setClosing(true);
-
-        setTimeout(() => {
-            setOpen(false);
-            setClosing(false);
-        }, 300);
-    };
-
-    const handleClick = (section) => {
+    const handleNavClick = (section) => {
         goToSection(section);
         closeMenu();
     };
 
     useEffect(() => {
         const media = window.matchMedia("(min-width: 901px)");
-
-        const handleChange = () => {
-            if (media.matches) {
-                setOpen(false);
-                setClosing(false);
-            }
+        const handleResize = () => {
+            if (media.matches) closeMenu();
         };
-
-        media.addEventListener("change", handleChange);
-
-        return () => media.removeEventListener("change", handleChange);
+        media.addEventListener("change", handleResize);
+        return () => media.removeEventListener("change", handleResize);
     }, []);
 
     return (
         <>
             <button
-                className="menu-btn"
-                onClick={open ? closeMenu : openMenu}
+                className={`nav-toggle${isOpen ? " nav-toggle--open" : ""}`}
+                onClick={isOpen ? closeMenu : openMenu}
+                aria-label={isOpen ? "Fechar menu" : "Abrir menu"}
+                aria-expanded={isOpen}
             >
-                {open ? <FaTimes /> : <FaBars />}
+                <span className="nav-toggle__bar" />
             </button>
 
-            {open && (
-                <div className="overlay" onClick={closeMenu} />
+            {isOpen && (
+                <div className="nav-overlay" onClick={closeMenu} aria-hidden="true" />
             )}
 
-            <nav className={`menu ${open ? "active" : ""} ${closing ? "closing" : ""}`}>
-                <ul>
-                    <li><a onClick={() => handleClick("inicio")}>Início</a></li>
-                    <li><a onClick={() => handleClick("sobre")}>Sobre mim</a></li>
-                    <li><a onClick={() => handleClick("servicos")}>O que eu faço</a></li>
-                    <li><a onClick={() => handleClick("resumo")}>Resumo</a></li>
-                    <li><a onClick={() => handleClick("depoimentos")}>Depoimentos</a></li>
-                    <li><a onClick={() => handleClick("contato")}>Contato</a></li>
+            <nav className={`nav-drawer${isOpen ? " nav-drawer--open" : ""}`} aria-hidden={!isOpen}>
+                <ul className="nav-drawer__list">
+                    <li className="nav-drawer__item"><a className="nav-drawer__link" onClick={() => handleNavClick("inicio")}>Início</a></li>
+                    <li className="nav-drawer__item"><a className="nav-drawer__link" onClick={() => handleNavClick("sobre")}>Sobre mim</a></li>
+                    <li className="nav-drawer__item"><a className="nav-drawer__link" onClick={() => handleNavClick("servicos")}>O que eu faço</a></li>
+                    <li className="nav-drawer__item"><a className="nav-drawer__link" onClick={() => handleNavClick("resumo")}>Resumo</a></li>
+                    <li className="nav-drawer__item"><a className="nav-drawer__link" onClick={() => handleNavClick("depoimentos")}>Depoimentos</a></li>
+                    <li className="nav-drawer__item"><a className="nav-drawer__link" onClick={() => handleNavClick("contato")}>Contato</a></li>
                 </ul>
-
                 <button
-                    className="contact-btn"
+                    className="nav-drawer__cta"
                     type="button"
-                    onClick={() => handleClick("contato")}
+                    onClick={() => handleNavClick("contato")}
                 >
                     Entrar em contato
                 </button>
