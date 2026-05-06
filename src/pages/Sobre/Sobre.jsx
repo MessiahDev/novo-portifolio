@@ -24,7 +24,7 @@ export default function Sobre() {
                         Eu sou <span className="bio-name">Alex Messias,</span> um desenvolvedor Full-Stack
                     </h3>
                     <p className="bio-text">
-                        Já estou na área há mais de 8 anos profissionalmente, mas comecei a programar desde os 14 anos de idade, movido pela curiosidade de entender como as coisas funcionam por trás das telas.
+                        Já estou na área há mais de 5 anos profissionalmente, mas comecei a programar desde os 14 anos de idade, movido pela curiosidade de entender como as coisas funcionam por trás das telas.
                     </p>
                     <p className="bio-text">
                         Ao longo da minha trajetória, desenvolvi soluções para empresas de diferentes segmentos — desde startups em fase inicial até corporações consolidadas no mercado, sempre com foco em qualidade, desempenho e experiência do usuário.

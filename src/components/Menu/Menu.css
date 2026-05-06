@@ -1,38 +1,3 @@
-:root {
-    /* Fundos */
-    --color-bg-primary:   #111418;
-    --color-bg-secondary: #212529;
-    --color-bg-card:      #343A40;
-
-    /* Texto */
-    --color-text-primary: #AAB1B8;
-    --color-text-white:   #ffffff;
-
-    /* Marca */
-    --color-accent:       #C24023;
-    --color-accent-hover: #BF2D10;
-    --color-accent-btn:   #ec441e;
-
-    /* Neutros */
-    --color-muted: #6C757D;
-    --color-yellow: #FFC107;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: "Poppins", sans-serif;
-}
-
-a {
-    text-decoration: none;
-}
-
-/* ── Toggle button ───────────────────────────────────────── */
 .nav-toggle {
     display: none;
     position: fixed;
@@ -49,7 +14,6 @@ a {
     cursor: pointer;
 }
 
-/* ── Burger bars ─────────────────────────────────────────── */
 .nav-toggle__bar,
 .nav-toggle__bar::before,
 .nav-toggle__bar::after {
@@ -76,7 +40,6 @@ a {
 .nav-toggle__bar::before { top: -7px; }
 .nav-toggle__bar::after  { top:  7px; }
 
-/* ── Burger → ✕ ──────────────────────────────────────────── */
 .nav-toggle--open .nav-toggle__bar {
     background-color: transparent;
 }
@@ -89,14 +52,12 @@ a {
     transform: translate(0, -7px) rotate(-45deg);
 }
 
-/* ── Overlay ─────────────────────────────────────────────── */
 .nav-overlay {
     position: fixed;
     inset: 0;
     z-index: 999;
 }
 
-/* ── Drawer ──────────────────────────────────────────────── */
 .nav-drawer {
     position: fixed;
     left: 0;
@@ -114,7 +75,6 @@ a {
     transform: translateY(0);
 }
 
-/* ── Nav list ────────────────────────────────────────────── */
 .nav-drawer__list {
     list-style: none;
     display: flex;
@@ -140,7 +100,6 @@ a {
     color: var(--color-accent-hover);
 }
 
-/* ── CTA button ──────────────────────────────────────────── */
 .nav-drawer__cta {
     display: flex;
     align-self: center;
@@ -156,7 +115,6 @@ a {
     cursor: pointer;
 }
 
-/* ── Responsive ──────────────────────────────────────────── */
 @media (max-width: 992px) {
     .nav-toggle {
         display: flex;
