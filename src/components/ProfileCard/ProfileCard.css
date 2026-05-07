@@ -15,7 +15,7 @@
     height: 170px;
     object-fit: cover;
     border-radius: 50%;
-    border: 9px solid #343A40;
+    border: 9px solid var(--color-bg-card);
     user-select: none;
     -webkit-user-drag: none;
     pointer-events: none;
