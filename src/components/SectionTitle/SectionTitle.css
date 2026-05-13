@@ -12,7 +12,7 @@
 
 .back-title {
     position: absolute;
-    font-size: clamp(52px, 14vw, 125px);
+    font-size: clamp(52px, 14vw, 105px);
     font-weight: 600;
     color: var(--color-muted);
     opacity: 0.15;

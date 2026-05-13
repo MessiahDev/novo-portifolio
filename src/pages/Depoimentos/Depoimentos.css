@@ -1,0 +1,94 @@
+.container-depoimentos {
+    background: var(--color-bg-primary);
+    padding: 85px 200px;
+}
+
+.depoimentos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    padding: 20px 0;
+}
+
+.depoimento-card {
+    background: var(--color-bg-secondary);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 12px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    transition: border-color 0.3s ease;
+}
+
+.depoimento-card:hover {
+    border-color: var(--color-accent);
+}
+
+.depoimento-estrelas {
+    display: flex;
+    gap: 4px;
+    color: var(--color-yellow);
+    font-size: 16px;
+}
+
+.depoimento-texto-wrapper {
+    display: flex;
+    gap: 16px;
+    flex: 1;
+}
+
+.depoimento-barra {
+    flex-shrink: 0;
+    width: 3px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 2px;
+}
+
+.depoimento-texto {
+    font-size: 15px;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.8;
+}
+
+.depoimento-autor {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: auto;
+}
+
+.depoimento-foto {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.depoimento-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.depoimento-nome {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--color-text-white);
+}
+
+.depoimento-empresa {
+    font-size: 13px;
+    color: rgba(255,255,255,0.45);
+}
+
+@media (max-width: 992px) {
+    .container-depoimentos {
+        padding: 60px 20px;
+    }
+
+    .depoimentos-grid {
+        grid-template-columns: 1fr;
+    }
+}
