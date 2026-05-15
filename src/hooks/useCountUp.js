@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react"
 
-export function useCountUp(target, duration = 1800) {
+export function useCountUp(target, duration = 1200) { // ✅ era 1800
     const [count, setCount] = useState(0)
     const ref = useRef()
     const started = useRef(false)
@@ -15,8 +15,8 @@ export function useCountUp(target, duration = 1800) {
                     function tick(now) {
                         const elapsed = now - startTime
                         const progress = Math.min(elapsed / duration, 1)
-                        const ease = 1 - Math.pow(1 - progress, 3)
-                        setCount(Math.floor(ease * target))
+                        const ease = 1 - Math.pow(1 - progress, 2)
+                        setCount(Math.round(ease * target))
                         if (progress < 1) requestAnimationFrame(tick)
                         else setCount(target)
                     }

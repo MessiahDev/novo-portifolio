@@ -1,6 +1,6 @@
 .container-resumo {
-    background: var(--color-bg-secondary);
-    padding: 85px 200px;
+    background: var(--color-bg-primary);
+    padding: 85px 120px;
 }
 
 .experiencias-grid {

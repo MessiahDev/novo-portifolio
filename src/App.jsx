@@ -1,12 +1,9 @@
 import "./styles/App.css"
 
 import { useActiveSection } from "./hooks/useActiveSection"
-import { goToSection } from "./utils/Scroll"
 
+import Aside from "./components/Aside/Aside"
 import Menu from "./components/Menu/Menu"
-import ProfileCard from "./components/ProfileCard/ProfileCard"
-import NavBar from "./components/NavBar/NavBar"
-import SocialIcons from "./components/SocialIcons/SocialIcons"
 import Footer from "./components/Footer/Footer"
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop"
 
@@ -16,6 +13,7 @@ import Servicos from "./pages/Servicos/Servicos"
 import Resumo from "./pages/Resumo/Resumo"
 import Depoimentos from "./pages/Depoimentos/Depoimentos"
 import Contato from "./pages/Contato/Contato"
+import { goToSection } from "./utils/Scroll"
 
 export default function App() {
     const activeSection = useActiveSection()
@@ -23,11 +21,7 @@ export default function App() {
     return (
         <div className="app-layout">
 
-            <aside className="main-aside">
-                <ProfileCard onClick={() => goToSection("inicio")} />
-                <NavBar activeSection={activeSection} goToSection={goToSection} />
-                <SocialIcons />
-            </aside>
+            <Aside activeSection={activeSection} />
 
             <Menu goToSection={goToSection} />
 

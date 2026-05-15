@@ -5,7 +5,14 @@ export default function SocialIcons() {
     return (
         <div className="social-icons">
             {SOCIAL_LINKS.map(({ href, icon, title }) => (
-                <a key={title} href={href} target="_blank" rel="noreferrer" title={title}>
+                <a
+                    key={title}
+                    className="social-icons__link"
+                    href={href}
+                    target="_blank"
+                    rel="noreferrer"
+                    title={title}
+                >
                     {icon}
                 </a>
             ))}

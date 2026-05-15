@@ -1,6 +1,6 @@
 .container-sobre {
     background: var(--color-bg-secondary);
-    padding: 85px 200px;
+    padding: 85px 120px;
 }
 
 .sobre-grid {
@@ -31,7 +31,6 @@
     margin-bottom: 16px;
 }
 
-
 .info-list {
     list-style: none;
     margin-bottom: 32px;
@@ -61,13 +60,15 @@
 }
 
 .whatsapp-btn {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     padding: 14px 28px;
     border-radius: 30px;
     background: var(--color-accent);
     color: var(--color-text-white);
     font-size: 15px;
-    font-weight: 500;
+    font-weight: 700;
     text-decoration: none;
     transition: background 0.3s ease;
 }
@@ -115,7 +116,7 @@
 
 .stat-number {
     font-size: clamp(36px, 5vw, 56px);
-    font-weight: 500;
+    font-weight: 700;
     color: var(--color-muted);
     line-height: 1;
 }
@@ -125,12 +126,6 @@
     color: rgba(255,255,255,0.5);
     text-align: center;
     line-height: 1.4;
-}
-
-@media (max-width: 1366px) {
-    .container-sobre {
-        padding: 85px 200px;
-    }
 }
 
 @media (max-width: 992px) {

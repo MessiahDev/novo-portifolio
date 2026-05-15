@@ -1,3 +1,4 @@
+import { FaWhatsapp } from "react-icons/fa"
 import SectionTitle from "../../components/SectionTitle/SectionTitle"
 import { useCountUp } from "../../hooks/useCountUp"
 import { STATS, INFO } from "../../constants/sobre"
@@ -43,15 +44,12 @@ export default function Sobre() {
                             </li>
                         ))}
                     </ul>
-
-                    
+                        
                     <a
                         className="whatsapp-btn"
                         href="https://wa.me/5521998138903"
                         target="_blank"
-                        rel="noreferrer"
-                    >
-                        Enviar via WhatsApp
+                        rel="noreferrer"><FaWhatsapp /> Enviar via WhatsApp
                     </a>
                 </div>
             </div>

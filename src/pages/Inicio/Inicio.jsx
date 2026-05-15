@@ -1,41 +1,40 @@
-import { useEffect, useRef } from "react"
-import { FaChevronDown } from "react-icons/fa"
+import { FaChevronDown, FaWhatsapp } from "react-icons/fa"
 import "./Inicio.css"
 
 export default function Inicio({ goToSection }) {
-    const bgRef = useRef()
-
-    useEffect(() => {
-        const handleScroll = () => {
-            const offset = window.scrollY
-            bgRef.current.style.transform = `translateY(${offset * 0.3}px)`
-        }
-
-        window.addEventListener("scroll", handleScroll)
-        return () => window.removeEventListener("scroll", handleScroll)
-    }, [])
-
     return (
         <div className="inicio">
-            <div className="parallax-bg" ref={bgRef}></div>
+            <div className="parallax-bg"></div>
+            <div className="inicio-overlay"></div>
 
-            <p className="intro-text">Bem-vindo</p>
+            <div className="inicio-content">
+                <span className="inicio-badge">
+                    <span className="inicio-badge-dot"></span>
+                    Disponível para projetos
+                </span>
 
-            <h2 className="main-title">
-                Desenvolvedor Full-Stack
-            </h2>
+                <p className="intro-text">Olá, eu sou</p>
 
-            <button
-                className="cta-btn"
-                onClick={() => goToSection("contato")}
-            >
-                Contate-me
-            </button>
+                <h1 className="main-title">Alex Messias</h1>
 
-            <div
-                className="scroll-area"
-                onClick={() => goToSection("sobre")}
-            >
+                <p className="sub-title">Desenvolvedor <span>Full-Stack</span></p>
+
+                <p className="inicio-desc">
+                    Criando aplicações web e mobile modernas,<br />
+                    performáticas e com foco na experiência do usuário.
+                </p>
+
+                <div className="inicio-actions">
+                    <button className="cta-btn cta-btn--primary" onClick={() => goToSection("contato")}>
+                        <FaWhatsapp /> Contate-me
+                    </button>
+                    <button className="cta-btn cta-btn--outline" onClick={() => goToSection("sobre")}>
+                        Sobre mim
+                    </button>
+                </div>
+            </div>
+
+            <div className="scroll-area" onClick={() => goToSection("sobre")}>
                 <FaChevronDown className="scroll-down" />
             </div>
         </div>

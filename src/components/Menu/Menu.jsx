@@ -1,25 +1,25 @@
-import { useState, useEffect } from "react";
-import "./Menu.css";
+import { useState, useEffect } from "react"
+import "./Menu.css"
 
 export default function Menu({ goToSection }) {
-    const [isOpen, setIsOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState(false)
 
-    const openMenu  = () => setIsOpen(true);
-    const closeMenu = () => setIsOpen(false);
+    const openMenu  = () => setIsOpen(true)
+    const closeMenu = () => setIsOpen(false)
 
     const handleNavClick = (section) => {
-        goToSection(section);
-        closeMenu();
-    };
+        goToSection(section)
+        closeMenu()
+    }
 
     useEffect(() => {
-        const media = window.matchMedia("(min-width: 901px)");
+        const media = window.matchMedia("(min-width: 901px)")
         const handleResize = () => {
-            if (media.matches) closeMenu();
-        };
-        media.addEventListener("change", handleResize);
-        return () => media.removeEventListener("change", handleResize);
-    }, []);
+            if (media.matches) closeMenu()
+        }
+        media.addEventListener("change", handleResize)
+        return () => media.removeEventListener("change", handleResize)
+    }, [])
 
     return (
         <>
@@ -36,7 +36,10 @@ export default function Menu({ goToSection }) {
                 <div className="nav-overlay" onClick={closeMenu} aria-hidden="true" />
             )}
 
-            <nav className={`nav-drawer${isOpen ? " nav-drawer--open" : ""}`} aria-hidden={!isOpen}>
+            <nav
+                className={`nav-drawer${isOpen ? " nav-drawer--open" : ""}`}
+                inert={!isOpen ? true : undefined}
+            >
                 <ul className="nav-drawer__list">
                     <li className="nav-drawer__item"><a className="nav-drawer__link" onClick={() => handleNavClick("inicio")}>Início</a></li>
                     <li className="nav-drawer__item"><a className="nav-drawer__link" onClick={() => handleNavClick("sobre")}>Sobre mim</a></li>
@@ -54,5 +57,5 @@ export default function Menu({ goToSection }) {
                 </button>
             </nav>
         </>
-    );
+    )
 }

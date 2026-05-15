@@ -10,24 +10,35 @@
 
     /* Marca */
     --color-accent:       #C24023;
-    --color-accent-hover: #BF2D10;
-    --color-accent-btn:   #ec441e;
+    --color-accent-hover: #A8341C;
+    --color-accent-btn:   #C24023;
 
     /* Neutros */
-    --color-muted: #6C757D;
-    --color-yellow: #FFC107;
+    --color-muted:  #6C757D;
+    --color-rating: #FFC107;
 }
 
-* {
+*  {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: "Poppins", sans-serif;
+    color: var(--color-text-primary);
+    background: var(--color-bg-primary);
 }
 
 a {
     text-decoration: none;
+}
+
+::selection {
+    background: var(--color-accent);
+    color: var(--color-text-white);
 }

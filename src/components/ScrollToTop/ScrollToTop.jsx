@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import { FaChevronUp } from "react-icons/fa"
+import { goToSection } from "../../utils/Scroll"
 import "./ScrollToTop.css"
 
 export default function ScrollToTop() {
@@ -14,14 +15,10 @@ export default function ScrollToTop() {
         return () => window.removeEventListener("scroll", handleScroll)
     }, [])
 
-    function scrollTopo() {
-        window.scrollTo({ top: 0, behavior: "smooth" })
-    }
-
     return (
         <button
             className={`scroll-to-top${visivel ? " scroll-to-top--visivel" : ""}`}
-            onClick={scrollTopo}
+            onClick={() => goToSection("inicio")}
             aria-label="Voltar ao topo"
         >
             <FaChevronUp />
