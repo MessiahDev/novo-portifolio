@@ -1,5 +1,5 @@
 export const STATS = [
-    { value: 5,  suffix: "+", label: "Anos de experiência" },
+    { value: 6,  suffix: "+", label: "Anos de experiência" },
     { value: 10, suffix: "+", label: "Clientes Satisfeitos" },
     { value: 10, suffix: "+", label: "Projetos realizados" },
     { value: 9,  suffix: "",  label: "Empresas trabalhadas/produtos" },

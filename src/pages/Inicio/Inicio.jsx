@@ -1,11 +1,28 @@
+import { useEffect } from "react"
 import { FaChevronDown, FaWhatsapp } from "react-icons/fa"
 import { FaArrowDown } from "react-icons/fa6";
+import backgroundImg from "../../assets/background.webp"
 import "./Inicio.css"
 
 export default function Inicio({ goToSection }) {
+    useEffect(() => {
+        const link = document.createElement("link");
+        link.rel = "preload";
+        link.as = "image";
+        link.href = backgroundImg;
+        document.head.appendChild(link);
+
+        return () => {
+            if (link.parentNode) document.head.removeChild(link);
+        };
+    }, []);
+
     return (
         <div className="inicio">
-            <div className="parallax-bg"></div>
+            <div
+                className="parallax-bg"
+                style={{ backgroundImage: `url(${backgroundImg})` }}
+            ></div>
             <div className="inicio-overlay"></div>
 
             <div className="inicio-content">

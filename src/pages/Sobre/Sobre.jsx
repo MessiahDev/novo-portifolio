@@ -36,13 +36,13 @@ export default function Sobre() {
                         Eu sou <span className="bio-name">Alex Messias,</span> um desenvolvedor Full-Stack
                     </h3>
                     <p className="bio-text">
-                        Já estou na área há mais de 5 anos profissionalmente, mas comecei a programar desde os 14 anos de idade, movido pela curiosidade de entender como as coisas funcionam por trás das telas.
+                        Comecei minha trajetória em 2018 como estagiário e desde então venho acumulando experiência em desenvolvimento web e mobile, trabalhando com empresas de diferentes segmentos.
                     </p>
                     <p className="bio-text">
-                        Ao longo da minha trajetória, desenvolvi soluções para empresas de diferentes segmentos — desde startups em fase inicial até corporações consolidadas no mercado, sempre com foco em qualidade, desempenho e experiência do usuário.
+                        Tenho experiência prática com tecnologias como C#, .Net Core, React, Vue.js, TypeScript e bancos de dados como MySQL e PostgreSQL — sempre buscando entregar soluções completas, do back-end ao front-end.
                     </p>
                     <p className="bio-text">
-                        Hoje atuo como desenvolvedor fullstack, combinando habilidades sólidas em front-end e back-end para criar aplicações completas, escaláveis e com interfaces que realmente fazem sentido para quem usa.
+                        Hoje busco novos desafios como desenvolvedor fullstack, aplicando meus conhecimentos em projetos que gerem impacto real para usuários e empresas.
                     </p>
                 </div>
 
