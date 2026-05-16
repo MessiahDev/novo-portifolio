@@ -1,9 +1,9 @@
 .main-aside {
     flex-shrink: 0;
     display: grid;
-    grid-template-rows: 240px 2fr 20px;
+    grid-template-rows: auto 1fr auto;
     justify-content: center;
-    align-items: center;
+    align-items: start;
     text-align: center;
     background: var(--color-bg-primary);
     color: var(--color-text-primary);
@@ -13,7 +13,7 @@
     position: sticky;
     top: 0;
     z-index: 1000;
-    border-right: 1px solid rgba(255,255,255,0.06);
+    border-right: 1px solid var(--color-border-subtle);
 }
 
 @media (max-width: 992px) {
@@ -26,6 +26,8 @@
         justify-content: space-between;
         z-index: 1001;
         border-right: none;
-        border-bottom: 1px solid rgba(255,255,255,0.06);
+        border-bottom: 1px solid var(--color-border-subtle);
+        padding: 0 16px;
+        overflow-y: hidden;
     }
 }

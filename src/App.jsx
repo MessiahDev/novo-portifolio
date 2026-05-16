@@ -1,7 +1,10 @@
+import { useState } from "react"
 import "./styles/App.css"
 
 import { useActiveSection } from "./hooks/useActiveSection"
+import { goToSection } from "./utils/Scroll"
 
+import LoadingScreen from "./components/LoadingScreen/LoadingScreen"
 import Aside from "./components/Aside/Aside"
 import Menu from "./components/Menu/Menu"
 import Footer from "./components/Footer/Footer"
@@ -10,34 +13,40 @@ import ScrollToTop from "./components/ScrollToTop/ScrollToTop"
 import Inicio from "./pages/Inicio/Inicio"
 import Sobre from "./pages/Sobre/Sobre"
 import Servicos from "./pages/Servicos/Servicos"
-import Resumo from "./pages/Resumo/Resumo"
+import Experiencia from "./pages/Experiencia/Experiencia"
 import Depoimentos from "./pages/Depoimentos/Depoimentos"
 import Contato from "./pages/Contato/Contato"
-import { goToSection } from "./utils/Scroll"
 
 export default function App() {
+    const [carregando, setCarregando] = useState(true)
     const activeSection = useActiveSection()
 
     return (
-        <div className="app-layout">
+        <>
+            {carregando && (
+                <LoadingScreen onComplete={() => setCarregando(false)} />
+            )}
 
-            <Aside activeSection={activeSection} />
+            <div className="app-layout">
 
-            <Menu goToSection={goToSection} />
+                <Aside activeSection={activeSection} />
 
-            <div className="container-inicio">
-                <section id="inicio">      <Inicio goToSection={goToSection} /> </section>
-                <section id="sobre">       <Sobre />                            </section>
-                <section id="servicos">    <Servicos />                         </section>
-                <section id="resumo">      <Resumo />                           </section>
-                <section id="depoimentos"> <Depoimentos />                      </section>
-                <section id="contato">     <Contato />                          </section>
+                <Menu goToSection={goToSection} />
 
-                <Footer />
+                <div className="container-inicio">
+                    <section id="inicio">      <Inicio goToSection={goToSection} /> </section>
+                    <section id="sobre">       <Sobre />                            </section>
+                    <section id="servicos">    <Servicos />                         </section>
+                    <section id="experiencia">      <Experiencia />                           </section>
+                    <section id="depoimentos"> <Depoimentos />                      </section>
+                    <section id="contato">     <Contato />                          </section>
+
+                    <Footer />
+                </div>
+
+                <ScrollToTop />
+
             </div>
-
-            <ScrollToTop />
-
-        </div>
+        </>
     )
 }

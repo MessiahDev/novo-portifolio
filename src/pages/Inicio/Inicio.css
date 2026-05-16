@@ -133,25 +133,27 @@
 }
 
 .cta-btn--primary {
-    background: var(--color-accent);
-    border: 2px solid var(--color-accent);
+    background: var(--color-accent-btn);
+    border: none;
     color: var(--color-text-white);
 }
 
 .cta-btn--primary:hover {
-    background: var(--color-accent-hover);
-    border-color: var(--color-accent-hover);
+    background: #ff5545;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(255, 85, 69, 0.3);
 }
 
 .cta-btn--outline {
     background: transparent;
-    border: 2px solid rgba(255,255,255,0.3);
+    border: 1px solid rgba(255,255,255,0.3);
     color: var(--color-text-white);
 }
 
 .cta-btn--outline:hover {
     border-color: var(--color-text-white);
-    background: rgba(255,255,255,0.06);
+    background: var(--color-border-subtle);;
 }
 
 .scroll-area {

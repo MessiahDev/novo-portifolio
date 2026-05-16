@@ -1,27 +1,45 @@
-function easeOutCubic(t) {
-    return 1 - Math.pow(1 - t, 3)
+function easeInOutCubic(t) {
+    return t < 0.5
+        ? 4 * t * t * t
+        : 1 - Math.pow(-2 * t + 2, 3) / 2
 }
 
 export function goToSection(sectionId) {
     const target = document.getElementById(sectionId)
     if (!target) return
 
-    const start        = window.scrollY
+    const start = window.scrollY
     const headerOffset = window.innerWidth <= 900 ? 65 : 0
-    const end          = target.offsetTop - headerOffset
-    const distance     = Math.abs(end - start)
-    const duration     = Math.min(Math.max(distance * 0.25, 350), 700) // ✅ mais rápido
-    let startTime      = null
+
+    const end =
+        target.getBoundingClientRect().top +
+        window.scrollY -
+        headerOffset
+
+    const distance = end - start
+
+    const duration = Math.min(
+        Math.max(Math.abs(distance) * 0.3, 400),
+        850
+    )
+
+    let startTime = null
 
     function animate(currentTime) {
         if (!startTime) startTime = currentTime
 
-        const elapsed  = currentTime - startTime
-        const progress = Math.min(elapsed / duration, 1)
+        const progress = Math.min(
+            (currentTime - startTime) / duration,
+            1
+        )
 
-        window.scrollTo(0, start + (end - start) * easeOutCubic(progress))
+        const eased = easeInOutCubic(progress)
 
-        if (elapsed < duration) requestAnimationFrame(animate)
+        window.scrollTo(0, start + distance * eased)
+
+        if (progress < 1) {
+            requestAnimationFrame(animate)
+        }
     }
 
     requestAnimationFrame(animate)

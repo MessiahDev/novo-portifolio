@@ -1,8 +1,8 @@
 :root {
     /* Fundos */
-    --color-bg-primary:   #111418;
-    --color-bg-secondary: #212529;
-    --color-bg-card:      #343A40;
+    --color-bg-primary:   #0d0d0d;
+    --color-bg-secondary: #111111;
+    --color-bg-card:      #1a1a1a;
 
     /* Texto */
     --color-text-primary: #AAB1B8;
@@ -11,11 +11,13 @@
     /* Marca */
     --color-accent:       #C24023;
     --color-accent-hover: #A8341C;
-    --color-accent-btn:   #C24023;
+    --color-accent-btn:   #E63E2F;
+    --color-accent-subtle: rgba(194, 64, 35, 0.15);
 
     /* Neutros */
     --color-muted:  #6C757D;
     --color-rating: #FFC107;
+    --color-border-subtle: rgba(255, 255, 255, 0.06);
 }
 
 *  {
@@ -25,7 +27,7 @@
 }
 
 html {
-    scroll-behavior: smooth;
+    scroll-behavior: auto;
 }
 
 body {
@@ -41,4 +43,32 @@ a {
 ::selection {
     background: var(--color-accent);
     color: var(--color-text-white);
+}
+
+.scroll-focus {
+    animation: focusFade 0.5s ease;
+}
+
+@keyframes focusFade {
+    0% {
+        background-color: rgba(194, 64, 35, 0.08);
+    }
+    100% {
+        background-color: transparent;
+    }
+}
+
+.fade-up {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+        opacity 0.55s ease,
+        transform 0.55s ease;
+
+    transition-delay: var(--fade-delay, 0ms);
+}
+
+.fade-up-init {
+    opacity: 1;
+    transform: translateY(0);
 }

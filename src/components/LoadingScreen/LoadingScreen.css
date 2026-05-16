@@ -1,0 +1,39 @@
+.loading-screen {
+    position: fixed;
+    inset: 0;
+    background: var(--color-bg-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+.loading-screen--saindo {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loading-texto {
+    font-size: clamp(32px, 6vw, 64px);
+    font-weight: 500;
+    font-family: "Share Tech Mono", monospace;
+    color: var(--color-text-white);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    letter-spacing: 0.05em;
+}
+
+.loading-cursor {
+    display: inline-block;
+    width: 0.9ch;
+    height: 1em;
+    background: var(--color-accent);
+    animation: piscar 0.7s infinite;
+}
+
+@keyframes piscar {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0; }
+}

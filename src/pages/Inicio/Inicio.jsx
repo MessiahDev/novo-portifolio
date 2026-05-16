@@ -1,4 +1,5 @@
 import { FaChevronDown, FaWhatsapp } from "react-icons/fa"
+import { FaArrowDown } from "react-icons/fa6";
 import "./Inicio.css"
 
 export default function Inicio({ goToSection }) {
@@ -26,10 +27,10 @@ export default function Inicio({ goToSection }) {
 
                 <div className="inicio-actions">
                     <button className="cta-btn cta-btn--primary" onClick={() => goToSection("contato")}>
-                        <FaWhatsapp /> Contate-me
+                        <FaWhatsapp /> Fale comigo
                     </button>
-                    <button className="cta-btn cta-btn--outline" onClick={() => goToSection("sobre")}>
-                        Sobre mim
+                    <button className="cta-btn cta-btn--outline" onClick={() => goToSection("experiencia")}>
+                        Ver experiências <FaArrowDown />
                     </button>
                 </div>
             </div>

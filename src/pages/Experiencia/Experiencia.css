@@ -1,4 +1,4 @@
-.container-resumo {
+.container-experiencia {
     background: var(--color-bg-primary);
     padding: 85px 120px;
 }
@@ -12,13 +12,12 @@
 
 .exp-card {
     background: var(--color-bg-secondary);
-    border: 1px solid rgba(255,255,255,0.06);
+    border: 1px solid var(--color-border-subtle);;
     border-radius: 10px;
     padding: 28px;
     display: flex;
     flex-direction: column;
     gap: 10px;
-    transition: border-color 0.3s ease;
 }
 
 .exp-card:hover {
@@ -69,7 +68,7 @@
 }
 
 .stack-section {
-    border-top: 1px solid rgba(255,255,255,0.06);
+    border-top: 1px solid var(--color-border-subtle);;
     padding-top: 40px;
 }
 
@@ -92,7 +91,6 @@
     border: 1px solid rgba(255,255,255,0.15);
     color: rgba(255,255,255,0.65);
     font-size: 13px;
-    transition: border-color 0.3s ease, color 0.3s ease;
 }
 
 .stack-tag:hover {
@@ -101,7 +99,7 @@
 }
 
 @media (max-width: 992px) {
-    .container-resumo {
+    .container-experiencia {
         padding: 60px 20px;
     }
 

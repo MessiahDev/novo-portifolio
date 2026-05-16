@@ -2,6 +2,7 @@ import { FaWhatsapp } from "react-icons/fa"
 import SectionTitle from "../../components/SectionTitle/SectionTitle"
 import { useCountUp } from "../../hooks/useCountUp"
 import { STATS, INFO } from "../../constants/sobre"
+import { useReveal } from "../../hooks/useReveal"
 import "./Sobre.css"
 
 function StatItem({ value, suffix, label }) {
@@ -15,11 +16,21 @@ function StatItem({ value, suffix, label }) {
 }
 
 export default function Sobre() {
+    const bioRef = useReveal("section")
+    const infoRef = useReveal("section")
+    const statsRef = useReveal("section")
+
     return (
         <div className="container-sobre">
-            <SectionTitle back="SOBRE MIM" front="Um pouco sobre mim" />
+            <SectionTitle
+                back="SOBRE MIM"
+                front="Um pouco sobre mim"
+            />
 
-            <div className="sobre-grid">
+            <div
+                className="sobre-grid fade-up"
+                ref={bioRef}
+            >
                 <div className="sobre-bio">
                     <h3 className="bio-headline">
                         Eu sou <span className="bio-name">Alex Messias,</span> um desenvolvedor Full-Stack
@@ -35,29 +46,47 @@ export default function Sobre() {
                     </p>
                 </div>
 
-                <div className="sobre-info">
+                <div
+                    className="sobre-info fade-up"
+                    ref={infoRef}
+                >
                     <ul className="info-list">
                         {INFO.map(({ label, value, accent }) => (
                             <li key={label} className="info-item">
-                                <span className="info-label">{label}:</span>
-                                <span className={`info-value${accent ? " accent" : ""}`}>{value}</span>
+                                <span className="info-label">
+                                    {label}:
+                                </span>
+
+                                <span className={`info-value${accent ? " accent" : ""}`}>
+                                    {value}
+                                </span>
                             </li>
                         ))}
                     </ul>
-                        
+
                     <a
                         className="whatsapp-btn"
                         href="https://wa.me/5521998138903"
                         target="_blank"
-                        rel="noreferrer"><FaWhatsapp /> Enviar via WhatsApp
+                        rel="noreferrer"
+                    >
+                        <FaWhatsapp /> Enviar via WhatsApp
                     </a>
                 </div>
             </div>
 
-            <div className="stats-row">
-                <span className="divider-75" aria-hidden="true"></span>
-                {STATS.map((stat) => (
-                    <StatItem key={stat.label} {...stat} />
+            <div
+                className="stats-row fade-up"
+                ref={statsRef}
+            >
+                <span className="divider-75" aria-hidden="true" />
+
+                {STATS.map((stat, index) => (
+                    <StatItem
+                        key={stat.label}
+                        {...stat}
+                        index={index}
+                    />
                 ))}
             </div>
         </div>

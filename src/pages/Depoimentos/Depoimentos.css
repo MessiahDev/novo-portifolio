@@ -12,13 +12,12 @@
 
 .depoimento-card {
     background: var(--color-bg-card);
-    border: 1px solid rgba(255,255,255,0.06);
+    border: 1px solid var(--color-border-subtle);;
     border-radius: 12px;
     padding: 28px;
     display: flex;
     flex-direction: column;
     gap: 24px;
-    transition: border-color 0.3s ease;
 }
 
 .depoimento-card:hover {

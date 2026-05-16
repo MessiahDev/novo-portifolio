@@ -44,7 +44,7 @@ export default function Menu({ goToSection }) {
                     <li className="nav-drawer__item"><a className="nav-drawer__link" onClick={() => handleNavClick("inicio")}>Início</a></li>
                     <li className="nav-drawer__item"><a className="nav-drawer__link" onClick={() => handleNavClick("sobre")}>Sobre mim</a></li>
                     <li className="nav-drawer__item"><a className="nav-drawer__link" onClick={() => handleNavClick("servicos")}>O que eu faço</a></li>
-                    <li className="nav-drawer__item"><a className="nav-drawer__link" onClick={() => handleNavClick("resumo")}>Resumo</a></li>
+                    <li className="nav-drawer__item"><a className="nav-drawer__link" onClick={() => handleNavClick("experiencia")}>Experiencia</a></li>
                     <li className="nav-drawer__item"><a className="nav-drawer__link" onClick={() => handleNavClick("depoimentos")}>Depoimentos</a></li>
                     <li className="nav-drawer__item"><a className="nav-drawer__link" onClick={() => handleNavClick("contato")}>Contato</a></li>
                 </ul>

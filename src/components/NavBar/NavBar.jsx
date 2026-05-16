@@ -11,15 +11,19 @@ export default function NavBar({ activeSection, goToSection }) {
                             className={`navbar-link${activeSection === id ? " navbar-link--active" : ""}`}
                             onClick={() => goToSection(id)}
                         >
-                            {activeSection === id && <span className="navbar-link-dot" aria-hidden="true" />}
                             {label}
                         </a>
                     </li>
                 ))}
 
-                <button className="navbar-cta" onClick={() => goToSection("contato")}>
+                <a
+                    className="navbar-cta"
+                    href="https://wa.me/5521998138903"
+                    target="_blank"
+                    rel="noreferrer"
+                >
                     Entrar em contato
-                </button>
+                </a>
             </ul>
         </nav>
     )
