@@ -31,13 +31,16 @@ export default function App() {
 
                 <Aside activeSection={activeSection} />
 
-                <Menu goToSection={goToSection} />
+                <Menu 
+                    goToSection={goToSection} 
+                    activeSection={activeSection}
+                />
 
                 <div className="container-inicio">
                     <section id="inicio">      <Inicio goToSection={goToSection} /> </section>
                     <section id="sobre">       <Sobre />                            </section>
                     <section id="servicos">    <Servicos />                         </section>
-                    <section id="experiencia">      <Experiencia />                           </section>
+                    <section id="experiencia"> <Experiencia />                      </section>
                     <section id="depoimentos"> <Depoimentos />                      </section>
                     <section id="contato">     <Contato />                          </section>
 

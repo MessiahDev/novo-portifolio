@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react"
 import "./Menu.css"
 
-export default function Menu({ goToSection }) {
+export default function Menu({ goToSection, activeSection }) {
     const [isOpen, setIsOpen] = useState(false)
 
-    const openMenu  = () => setIsOpen(true)
+    const openMenu = () => setIsOpen(true)
     const closeMenu = () => setIsOpen(false)
 
     const handleNavClick = (section) => {
@@ -12,6 +12,7 @@ export default function Menu({ goToSection }) {
         closeMenu()
     }
 
+    // Fecha o menu automaticamente em telas grandes
     useEffect(() => {
         const media = window.matchMedia("(min-width: 901px)")
         const handleResize = () => {
@@ -23,6 +24,7 @@ export default function Menu({ goToSection }) {
 
     return (
         <>
+            {/* Botão Hamburger */}
             <button
                 className={`nav-toggle${isOpen ? " nav-toggle--open" : ""}`}
                 onClick={isOpen ? closeMenu : openMenu}
@@ -32,29 +34,73 @@ export default function Menu({ goToSection }) {
                 <span className="nav-toggle__bar" />
             </button>
 
+            {/* Overlay */}
             {isOpen && (
                 <div className="nav-overlay" onClick={closeMenu} aria-hidden="true" />
             )}
 
-            <nav
-                className={`nav-drawer${isOpen ? " nav-drawer--open" : ""}`}
-                inert={!isOpen ? true : undefined}
-            >
+            {/* Drawer Menu */}
+            <nav className={`nav-drawer${isOpen ? " nav-drawer--open" : ""}`}>
                 <ul className="nav-drawer__list">
-                    <li className="nav-drawer__item"><a className="nav-drawer__link" onClick={() => handleNavClick("inicio")}>Início</a></li>
-                    <li className="nav-drawer__item"><a className="nav-drawer__link" onClick={() => handleNavClick("sobre")}>Sobre mim</a></li>
-                    <li className="nav-drawer__item"><a className="nav-drawer__link" onClick={() => handleNavClick("servicos")}>O que eu faço</a></li>
-                    <li className="nav-drawer__item"><a className="nav-drawer__link" onClick={() => handleNavClick("experiencia")}>Experiencia</a></li>
-                    <li className="nav-drawer__item"><a className="nav-drawer__link" onClick={() => handleNavClick("depoimentos")}>Depoimentos</a></li>
-                    <li className="nav-drawer__item"><a className="nav-drawer__link" onClick={() => handleNavClick("contato")}>Contato</a></li>
+                    <li className="nav-drawer__item">
+                        <a 
+                            className={`nav-drawer__link ${activeSection === "inicio" ? "nav-drawer__link--active" : ""}`}
+                            onClick={() => handleNavClick("inicio")}
+                        >
+                            Início
+                        </a>
+                    </li>
+                    <li className="nav-drawer__item">
+                        <a 
+                            className={`nav-drawer__link ${activeSection === "sobre" ? "nav-drawer__link--active" : ""}`}
+                            onClick={() => handleNavClick("sobre")}
+                        >
+                            Sobre mim
+                        </a>
+                    </li>
+                    <li className="nav-drawer__item">
+                        <a 
+                            className={`nav-drawer__link ${activeSection === "servicos" ? "nav-drawer__link--active" : ""}`}
+                            onClick={() => handleNavClick("servicos")}
+                        >
+                            O que eu faço
+                        </a>
+                    </li>
+                    <li className="nav-drawer__item">
+                        <a 
+                            className={`nav-drawer__link ${activeSection === "experiencia" ? "nav-drawer__link--active" : ""}`}
+                            onClick={() => handleNavClick("experiencia")}
+                        >
+                            Experiência
+                        </a>
+                    </li>
+                    <li className="nav-drawer__item">
+                        <a 
+                            className={`nav-drawer__link ${activeSection === "depoimentos" ? "nav-drawer__link--active" : ""}`}
+                            onClick={() => handleNavClick("depoimentos")}
+                        >
+                            Depoimentos
+                        </a>
+                    </li>
+                    <li className="nav-drawer__item">
+                        <a 
+                            className={`nav-drawer__link ${activeSection === "contato" ? "nav-drawer__link--active" : ""}`}
+                            onClick={() => handleNavClick("contato")}
+                        >
+                            Contato
+                        </a>
+                    </li>
                 </ul>
-                <button
+                
+                {/* Botão Entrar em Contato */}
+                <a
                     className="nav-drawer__cta"
-                    type="button"
-                    onClick={() => handleNavClick("contato")}
+                    href="https://wa.me/5521998138903"
+                    target="_blank"
+                    rel="noreferrer"
                 >
                     Entrar em contato
-                </button>
+                </a>
             </nav>
         </>
     )
