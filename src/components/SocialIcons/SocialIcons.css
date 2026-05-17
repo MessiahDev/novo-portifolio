@@ -52,6 +52,7 @@
 
     .social-icons {
         margin-right: 45px;
+        gap: 6px;
     }
 
     .social-icons__link {
