@@ -8,7 +8,7 @@ export default defineConfig({
         babel({ presets: [reactCompilerPreset()] })
     ],
     build: {
-        minify: 'esbuild',
+        minify: 'oxc',
         cssMinify: true,
     }
 })
