@@ -10,13 +10,5 @@ export default defineConfig({
     build: {
         minify: 'esbuild',
         cssMinify: true,
-        rollupOptions: {
-            output: {
-                manualChunks: {
-                    react: ['react', 'react-dom'],
-                    icons: ['react-icons'],
-                }
-            }
-        }
     }
 })
