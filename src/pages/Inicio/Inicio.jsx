@@ -6,7 +6,7 @@ export default function Inicio({ goToSection }) {
     return (
         <section className="inicio">
             <img 
-                src="/assets/background.webp"
+                src="/background.webp"
                 alt="Vista do Rio de Janeiro ao pôr do sol"
                 className="hero-background"
                 fetchPriority="high"
