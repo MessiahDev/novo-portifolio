@@ -1,4 +1,4 @@
-import alex from "../../assets/alex.png"
+import alex from "../../assets/alex.webp"
 import "./ProfileCard.css"
 
 export default function ProfileCard({ onClick }) {

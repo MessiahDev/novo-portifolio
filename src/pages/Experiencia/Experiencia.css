@@ -1,5 +1,5 @@
 .container-experiencia {
-    background: var(--color-bg-primary);
+    background: var(--color-bg-secondary);
     padding: 85px 120px;
 }
 
@@ -11,7 +11,7 @@
 }
 
 .exp-card {
-    background: var(--color-bg-secondary);
+    background: var(--color-bg-card);
     border: 1px solid var(--color-border-subtle);;
     border-radius: 10px;
     padding: 28px;

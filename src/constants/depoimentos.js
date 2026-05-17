@@ -1,6 +1,6 @@
-import marcus from "../assets/marcus.jpeg"
-import jorge  from "../assets/jorge.jpeg"
-import michel from "../assets/michel.jpeg"
+import marcus from "../assets/marcus.webp"
+import jorge  from "../assets/jorge.webp"
+import michel from "../assets/michel.webp"
 
 export const DEPOIMENTOS = [
     {

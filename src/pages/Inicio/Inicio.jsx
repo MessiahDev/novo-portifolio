@@ -21,7 +21,11 @@ export default function Inicio({ goToSection }) {
         <div className="inicio">
             <div
                 className="parallax-bg"
-                style={{ backgroundImage: `url(${backgroundImg})` }}
+                style={{ 
+                    backgroundImage: `url(${backgroundImg})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center'
+                }}
             ></div>
             <div className="inicio-overlay"></div>
 

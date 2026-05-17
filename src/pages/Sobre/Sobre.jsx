@@ -70,7 +70,7 @@ export default function Sobre() {
                         target="_blank"
                         rel="noreferrer"
                     >
-                        <FaWhatsapp /> Enviar via WhatsApp
+                        <FaWhatsapp /> Enviar mensagem
                     </a>
                 </div>
             </div>

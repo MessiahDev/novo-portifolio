@@ -12,6 +12,8 @@
     --color-accent:       #C24023;
     --color-accent-hover: #A8341C;
     --color-accent-btn:   #E63E2F;
+    --color-accent-btn2:  #25D366;
+    --color-accent-bg: rgba(255, 85, 69, 0.3);
     --color-accent-subtle: rgba(194, 64, 35, 0.15);
 
     /* Neutros */
@@ -20,7 +22,7 @@
     --color-border-subtle: rgba(255, 255, 255, 0.06);
 }
 
-*  {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -45,30 +47,47 @@ a {
     color: var(--color-text-white);
 }
 
-.scroll-focus {
-    animation: focusFade 0.5s ease;
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
 }
 
-@keyframes focusFade {
-    0% {
-        background-color: rgba(194, 64, 35, 0.08);
-    }
-    100% {
-        background-color: transparent;
-    }
+::-webkit-scrollbar-track {
+    background: #0f0f0f;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-accent);
+    border-radius: 20px;
+    border: 2px solid #0f0f0f;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ff5a3d;
+}
+
+html {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-accent) #0f0f0f;
+}
+
+.scroll-focus {
+    animation: focusFade 0.5s ease;
 }
 
 .fade-up {
     opacity: 0;
     transform: translateY(24px);
-    transition:
-        opacity 0.55s ease,
-        transform 0.55s ease;
-
+    transition: opacity 0.55s ease, transform 0.55s ease;
     transition-delay: var(--fade-delay, 0ms);
 }
 
 .fade-up-init {
     opacity: 1;
     transform: translateY(0);
+}
+
+@keyframes focusFade {
+    0%   { background-color: rgba(194, 64, 35, 0.08); }
+    100% { background-color: transparent; }
 }
