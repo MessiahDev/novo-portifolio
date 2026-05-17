@@ -1,13 +1,12 @@
 import { FaChevronDown, FaWhatsapp } from "react-icons/fa"
 import { FaArrowDown } from "react-icons/fa6"
-import backgroundImg from "../../assets/background.webp"
 import "./Inicio.css"
 
 export default function Inicio({ goToSection }) {
     return (
         <section className="inicio">
             <img 
-                src={backgroundImg}
+                src="/background.webp"
                 alt="Vista do Rio de Janeiro ao pôr do sol"
                 className="hero-background"
                 fetchPriority="high"
