@@ -77,7 +77,6 @@
     background: var(--color-accent-btn2);
     color: var(--color-text-white);
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px var(--color-accent-btn2);
 }
 
 .stats-row {
