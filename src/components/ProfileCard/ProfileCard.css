@@ -52,6 +52,7 @@
 .role-profile {
     font-size: 13px;
     font-weight: 500;
+    padding: 11px 10px;
     color: var(--color-accent);
     letter-spacing: 0.1em;
     text-transform: uppercase;

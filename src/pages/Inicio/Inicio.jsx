@@ -43,9 +43,14 @@ export default function Inicio({ goToSection }) {
                 </p>
 
                 <div className="inicio-actions">
-                    <button className="cta-btn cta-btn--primary" onClick={() => goToSection("contato")}>
+                    <a
+                        className="cta-btn cta-btn--primary"
+                        href="https://wa.me/5521998138903"
+                        target="_blank"
+                        rel="noreferrer"
+                    >
                         <FaWhatsapp /> Fale comigo
-                    </button>
+                    </a>
                     <button className="cta-btn cta-btn--outline" onClick={() => goToSection("experiencia")}>
                         Ver experiências <FaArrowDown />
                     </button>
