@@ -32,9 +32,9 @@ export default function Sobre() {
                 ref={bioRef}
             >
                 <div className="sobre-bio">
-                    <h3 className="bio-headline">
+                    <h2 className="bio-headline">
                         Eu sou <span className="bio-name">Alex Messias,</span> um desenvolvedor Full-Stack
-                    </h3>
+                    </h2>
                     <p className="bio-text">
                         Comecei minha trajetória em 2018 como estagiário e desde então venho acumulando experiência em desenvolvimento web e mobile, trabalhando com empresas de diferentes segmentos.
                     </p>

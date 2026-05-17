@@ -66,7 +66,6 @@ export default function Inicio({ goToSection }) {
             <div
                 className="scroll-area"
                 onClick={() => goToSection("sobre")}
-                aria-label="Rolar para seção sobre"
             >
                 <FaChevronDown className="scroll-down" />
             </div>

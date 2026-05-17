@@ -3,9 +3,9 @@ import "./SectionTitle.css"
 export default function SectionTitle({ back, front }) {
     return (
         <div className="title-wrapper">
-            <div className="back-title">{back}</div>
+            <span className="back-title" aria-hidden="true">{back}</span>
             <div className="front-title">
-                <p className="title">{front}</p>
+                <h2 className="title">{front}</h2>
                 <span className="underline"></span>
             </div>
         </div>

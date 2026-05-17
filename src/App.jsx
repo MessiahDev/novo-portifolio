@@ -36,7 +36,7 @@ export default function App() {
                     activeSection={activeSection}
                 />
 
-                <div className="container-inicio">
+                <main className="container-inicio">
                     <section id="inicio">      <Inicio goToSection={goToSection} /> </section>
                     <section id="sobre">       <Sobre />                            </section>
                     <section id="servicos">    <Servicos />                         </section>
@@ -45,7 +45,7 @@ export default function App() {
                     <section id="contato">     <Contato />                          </section>
 
                     <Footer />
-                </div>
+                </main>
 
                 <ScrollToTop />
 
