@@ -1,37 +1,40 @@
 import { useEffect } from "react"
 import { FaChevronDown, FaWhatsapp } from "react-icons/fa"
-import { FaArrowDown } from "react-icons/fa6";
+import { FaArrowDown } from "react-icons/fa6"
 import backgroundImg from "../../assets/background.webp"
 import "./Inicio.css"
 
 export default function Inicio({ goToSection }) {
+    
     useEffect(() => {
-        const link = document.createElement("link");
-        link.rel = "preload";
-        link.as = "image";
-        link.href = backgroundImg;
-        document.head.appendChild(link);
+        const link = document.createElement("link")
+        link.rel = "preload"
+        link.as = "image"
+        link.href = backgroundImg
+        link.fetchPriority = "high"
+        document.head.appendChild(link)
 
         return () => {
-            if (link.parentNode) document.head.removeChild(link);
-        };
-    }, []);
+            if (link.parentNode) {
+                document.head.removeChild(link)
+            }
+        }
+    }, [])
 
     return (
         <div className="inicio">
             <div
                 className="parallax-bg"
                 style={{ 
-                    backgroundImage: `url(${backgroundImg})`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center'
+                    backgroundImage: `url(${backgroundImg})`
                 }}
-            ></div>
-            <div className="inicio-overlay"></div>
+            />
+
+            <div className="inicio-overlay" />
 
             <div className="inicio-content">
                 <span className="inicio-badge">
-                    <span className="inicio-badge-dot"></span>
+                    <span className="inicio-badge-dot" />
                     Disponível para projetos
                 </span>
 
@@ -55,7 +58,10 @@ export default function Inicio({ goToSection }) {
                     >
                         <FaWhatsapp /> Fale comigo
                     </a>
-                    <button className="cta-btn cta-btn--outline" onClick={() => goToSection("experiencia")}>
+                    <button 
+                        className="cta-btn cta-btn--outline" 
+                        onClick={() => goToSection("experiencia")}
+                    >
                         Ver experiências <FaArrowDown />
                     </button>
                 </div>
