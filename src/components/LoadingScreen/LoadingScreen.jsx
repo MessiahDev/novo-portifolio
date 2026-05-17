@@ -24,10 +24,10 @@ export default function LoadingScreen({ onComplete }) {
 
     return (
         <div className={`loading-screen${saindo ? " loading-screen--saindo" : ""}`}>
-            <h1 className="loading-texto">
+            <div className="loading-texto">
                 {texto}
                 <span className="loading-cursor" />
-            </h1>
+            </div>
         </div>
     )
 }
