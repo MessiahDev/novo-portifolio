@@ -1,6 +1,7 @@
 .container-servicos {
     background: var(--color-bg-primary);
     padding: 85px 120px;
+    overflow: hidden;
 }
 
 .servicos-grid {
@@ -16,8 +17,9 @@
     gap: 20px;
     padding: 28px;
     background: var(--color-bg-card);
-    border-radius: 10px;
+    border-radius: 12px;
     border: 1px solid var(--color-border-subtle);
+    min-height: 100%;
 }
 
 .servico-card:hover {
@@ -35,7 +37,10 @@
     justify-content: center;
     font-size: 22px;
     color: var(--color-accent);
-    transition: background 0.3s ease;
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
 }
 
 .servico-card:hover .servico-icon {
@@ -47,27 +52,95 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
+    min-width: 0;
 }
 
 .servico-title {
     font-size: 17px;
     font-weight: 700;
     color: var(--color-text-white);
+    line-height: 1.5;
+    word-break: break-word;
 }
 
 .servico-description {
     font-size: 14px;
     color: rgba(255,255,255,0.55);
-    line-height: 1.7;
+    line-height: 1.8;
+    word-break: break-word;
 }
 
 @media (max-width: 992px) {
+    .container-servicos {
+        padding: 70px 40px;
+    }
+
+    .servicos-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 30px 0;
+    }
+
+    .servico-card {
+        padding: 24px;
+    }
+}
+
+@media (max-width: 768px) {
     .container-servicos {
         padding: 60px 20px;
     }
 
     .servicos-grid {
-        grid-template-columns: 1fr;
+        gap: 18px;
+        padding: 20px 0;
+    }
+
+    .servico-card {
         gap: 16px;
+        padding: 22px;
+        border-radius: 10px;
+    }
+
+    .servico-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+
+    .servico-title {
+        font-size: 16px;
+    }
+
+    .servico-description {
+        font-size: 13px;
+        line-height: 1.7;
+    }
+}
+
+@media (max-width: 480px) {
+    .container-servicos {
+        padding: 50px 16px;
+    }
+
+    .servico-card {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px 18px;
+    }
+
+    .servico-icon {
+        width: 46px;
+        height: 46px;
+        font-size: 18px;
+        border-radius: 8px;
+    }
+
+    .servico-title {
+        font-size: 15px;
+    }
+
+    .servico-description {
+        font-size: 12px;
     }
 }
