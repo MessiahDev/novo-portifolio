@@ -11,16 +11,15 @@
     overflow: hidden;
 }
 
-.parallax-bg {
+.hero-background {
     position: absolute;
     inset: 0;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
     z-index: 0;
-    image-rendering: -webkit-optimize-contrast;
+    pointer-events: none;
 }
 
 .inicio-overlay {

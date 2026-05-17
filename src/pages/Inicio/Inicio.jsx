@@ -14,20 +14,17 @@ export default function Inicio({ goToSection }) {
         link.fetchPriority = "high"
         document.head.appendChild(link)
 
-        return () => {
-            if (link.parentNode) {
-                document.head.removeChild(link)
-            }
-        }
+        return () => link.parentNode?.removeChild(link)
     }, [])
 
     return (
         <div className="inicio">
-            <div
-                className="parallax-bg"
-                style={{ 
-                    backgroundImage: `url(${backgroundImg})`
-                }}
+            <img 
+                src={backgroundImg} 
+                alt="Vista do Rio de Janeiro ao pôr do sol"
+                className="hero-background"
+                fetchPriority="high"
+                loading="eager"
             />
 
             <div className="inicio-overlay" />
