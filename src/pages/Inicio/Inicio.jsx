@@ -1,30 +1,18 @@
-import { useEffect } from "react"
 import { FaChevronDown, FaWhatsapp } from "react-icons/fa"
 import { FaArrowDown } from "react-icons/fa6"
 import backgroundImg from "../../assets/background.webp"
 import "./Inicio.css"
 
 export default function Inicio({ goToSection }) {
-    
-    useEffect(() => {
-        const link = document.createElement("link")
-        link.rel = "preload"
-        link.as = "image"
-        link.href = backgroundImg
-        link.fetchPriority = "high"
-        document.head.appendChild(link)
-
-        return () => link.parentNode?.removeChild(link)
-    }, [])
-
     return (
-        <div className="inicio">
+        <section className="inicio">
             <img 
-                src={backgroundImg} 
+                src={backgroundImg}
                 alt="Vista do Rio de Janeiro ao pôr do sol"
                 className="hero-background"
                 fetchPriority="high"
                 loading="eager"
+                decoding="async"
             />
 
             <div className="inicio-overlay" />
@@ -35,14 +23,21 @@ export default function Inicio({ goToSection }) {
                     Disponível para projetos
                 </span>
 
-                <p className="intro-text">Olá, eu sou</p>
+                <p className="intro-text">
+                    Olá, eu sou
+                </p>
 
-                <h1 className="main-title">Alex Messias</h1>
+                <h1 className="main-title">
+                    Alex Messias
+                </h1>
 
-                <p className="sub-title">Desenvolvedor <span>Full-Stack</span></p>
+                <p className="sub-title">
+                    Desenvolvedor <span>Full-Stack</span>
+                </p>
 
                 <p className="inicio-desc">
-                    Criando aplicações web e mobile modernas,<br />
+                    Criando aplicações web e mobile modernas,
+                    <br />
                     performáticas e com foco na experiência do usuário.
                 </p>
 
@@ -52,21 +47,30 @@ export default function Inicio({ goToSection }) {
                         href="https://wa.me/5521998138903"
                         target="_blank"
                         rel="noreferrer"
+                        aria-label="Entrar em contato pelo WhatsApp"
                     >
-                        <FaWhatsapp /> Fale comigo
+                        <FaWhatsapp />
+                        Fale comigo
                     </a>
-                    <button 
-                        className="cta-btn cta-btn--outline" 
+
+                    <button
+                        className="cta-btn cta-btn--outline"
                         onClick={() => goToSection("experiencia")}
+                        aria-label="Ver experiências"
                     >
-                        Ver experiências <FaArrowDown />
+                        Ver experiências
+                        <FaArrowDown />
                     </button>
                 </div>
             </div>
 
-            <div className="scroll-area" onClick={() => goToSection("sobre")}>
+            <div
+                className="scroll-area"
+                onClick={() => goToSection("sobre")}
+                aria-label="Rolar para seção sobre"
+            >
                 <FaChevronDown className="scroll-down" />
             </div>
-        </div>
+        </section>
     )
 }
