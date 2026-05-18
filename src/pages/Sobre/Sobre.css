@@ -1,6 +1,6 @@
 .container-sobre {
     background: var(--color-bg-secondary);
-    padding: 85px 120px;
+    padding: 85px 300px;
     overflow: hidden;
 }
 
@@ -19,6 +19,8 @@
     color: var(--color-text-white);
     line-height: 1.4;
     margin-bottom: 24px;
+    overflow-wrap: anywhere;
+    word-break: break-word;
 }
 
 .bio-name {
@@ -30,6 +32,8 @@
     color: rgba(255,255,255,0.65);
     line-height: 1.8;
     margin-bottom: 16px;
+    overflow-wrap: anywhere;
+    word-break: break-word;
 }
 
 .info-list {
@@ -56,6 +60,7 @@
 .info-value {
     color: rgba(255,255,255,0.65);
     word-break: break-word;
+    overflow-wrap: anywhere;
 }
 
 .info-value.accent {
@@ -141,6 +146,43 @@
     color: rgba(255,255,255,0.5);
     text-align: center;
     line-height: 1.4;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+@media (max-width: 2560px) {
+    .container-sobre {
+        padding: 100px 300px;
+    }
+}
+
+@media (max-width: 1920px) {
+    .container-sobre {
+        padding: 90px 220px;
+    }
+}
+
+@media (max-width: 1680px) {
+    .container-sobre {
+        padding: 85px 180px;
+    }
+}
+
+@media (max-width: 1440px) {
+    .container-sobre {
+        padding: 80px 120px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .container-sobre {
+        padding: 70px 60px;
+    }
+
+    .sobre-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
 }
 
 @media (max-width: 992px) {
@@ -218,34 +260,6 @@
         padding: 14px 20px;
         font-size: 14px;
     }
-
-    .stats-row {
-        grid-template-columns: 1fr;
-        padding: 10px 0;
-    }
-
-    .stats-row::before,
-    .stats-row::after,
-    .stats-row .divider-75 {
-        display: none;
-    }
-
-    .stat-item {
-        padding: 28px 10px;
-        border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .stat-item:last-child {
-        border-bottom: none;
-    }
-
-    .stat-number {
-        font-size: clamp(30px, 10vw, 44px);
-    }
-
-    .stat-label {
-        font-size: 12px;
-    }
 }
 
 @media (max-width: 480px) {
@@ -267,5 +281,28 @@
 
     .stat-item {
         padding: 24px 8px;
+    }
+}
+
+@media (max-width: 360px) {
+    .container-sobre {
+        padding: 45px 12px;
+    }
+
+    .bio-headline {
+        font-size: 18px;
+    }
+
+    .bio-text {
+        font-size: 12.5px;
+    }
+
+    .stat-item {
+        padding: 20px 6px;
+    }
+
+    .whatsapp-btn {
+        padding: 13px 16px;
+        font-size: 13px;
     }
 }

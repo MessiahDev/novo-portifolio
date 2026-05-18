@@ -1,14 +1,35 @@
+/* styles/App.css */
+
 .app-layout {
     display: flex;
+    min-height: 100vh;           /* Importante */
+    position: relative;
 }
 
-.container-inicio {
+.main-content {
     flex: 1;
-    min-height: 100vh;
+    overflow-y: auto;
+    background-color: #f8f9fa;
 }
 
+.Aside {
+    width: 280px;
+    flex-shrink: 0;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+/* Responsividade */
 @media (max-width: 992px) {
     .app-layout {
         flex-direction: column;
+    }
+
+    .Aside {
+        width: 100%;
+        height: auto;
+        position: relative;
     }
 }

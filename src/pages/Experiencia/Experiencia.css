@@ -1,6 +1,6 @@
 .container-experiencia {
     background: var(--color-bg-secondary);
-    padding: 85px 120px;
+    padding: 85px 300px;
     overflow: hidden;
 }
 
@@ -110,6 +110,41 @@
     color: var(--color-text-white);
 }
 
+@media (max-width: 2560px) {
+    .container-experiencia {
+        padding: 100px 300px;
+    }
+}
+
+@media (max-width: 1920px) {
+    .container-experiencia {
+        padding: 90px 220px;
+    }
+}
+
+@media (max-width: 1680px) {
+    .container-experiencia {
+        padding: 85px 180px;
+    }
+}
+
+@media (max-width: 1440px) {
+    .container-experiencia {
+        padding: 80px 120px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .container-experiencia {
+        padding: 70px 60px;
+    }
+
+    .experiencias-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
 @media (max-width: 992px) {
     .container-experiencia {
         padding: 70px 40px;
@@ -196,5 +231,43 @@
 
     .stack-titulo {
         font-size: 16px;
+    }
+}
+
+@media (max-width: 360px) {
+    .container-experiencia {
+        padding: 45px 12px;
+    }
+
+    .exp-card {
+        padding: 18px 14px;
+    }
+
+    .exp-periodo {
+        font-size: 9px;
+        padding: 3px 8px;
+    }
+
+    .exp-cargo {
+        font-size: 12px;
+    }
+
+    .exp-empresa {
+        font-size: 13px;
+    }
+
+    .exp-descricao,
+    .exp-stack {
+        font-size: 12px;
+    }
+
+    .stack-titulo {
+        font-size: 15px;
+        margin-bottom: 15px;
+    }
+
+    .stack-tag {
+        font-size: 11px;
+        padding: 5px 12px;
     }
 }

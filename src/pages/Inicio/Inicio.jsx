@@ -4,7 +4,7 @@ import "./Inicio.css"
 
 export default function Inicio({ goToSection }) {
     return (
-        <section className="inicio">
+        <section className="container-inicio">
             <img 
                 src="/background.webp"
                 alt="Vista do Rio de Janeiro ao pôr do sol"

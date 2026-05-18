@@ -9,7 +9,10 @@ export default function Aside({ activeSection }) {
         <aside className="main-aside">
             <ProfileCard onClick={() => goToSection("inicio")} />
             <NavBar activeSection={activeSection} goToSection={goToSection} />
-            <SocialIcons />
+            
+            <div className="aside-icons">
+                <SocialIcons />
+            </div>
         </aside>
     )
 }

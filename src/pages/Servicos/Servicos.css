@@ -1,6 +1,6 @@
 .container-servicos {
     background: var(--color-bg-primary);
-    padding: 85px 120px;
+    padding: 85px 300px;
     overflow: hidden;
 }
 
@@ -68,6 +68,41 @@
     color: rgba(255,255,255,0.55);
     line-height: 1.8;
     word-break: break-word;
+}
+
+@media (max-width: 2560px) {
+    .container-servicos {
+        padding: 100px 300px;
+    }
+}
+
+@media (max-width: 1920px) {
+    .container-servicos {
+        padding: 90px 220px;
+    }
+}
+
+@media (max-width: 1680px) {
+    .container-servicos {
+        padding: 85px 180px;
+    }
+}
+
+@media (max-width: 1440px) {
+    .container-servicos {
+        padding: 80px 120px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .container-servicos {
+        padding: 70px 60px;
+    }
+
+    .servicos-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
 }
 
 @media (max-width: 992px) {
@@ -138,6 +173,30 @@
 
     .servico-title {
         font-size: 15px;
+    }
+
+    .servico-description {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 360px) {
+    .container-servicos {
+        padding: 45px 12px;
+    }
+
+    .servico-card {
+        padding: 18px 14px;
+    }
+
+    .servico-icon {
+        width: 42px;
+        height: 42px;
+        font-size: 17px;
+    }
+
+    .servico-title {
+        font-size: 14px;
     }
 
     .servico-description {

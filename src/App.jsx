@@ -23,32 +23,26 @@ export default function App() {
 
     return (
         <>
-            {carregando && (
-                <LoadingScreen onComplete={() => setCarregando(false)} />
-            )}
+            {carregando && <LoadingScreen onComplete={() => setCarregando(false)} />}
 
             <div className="app-layout">
-
                 <Aside activeSection={activeSection} />
+                <Menu goToSection={goToSection} activeSection={activeSection} />
 
-                <Menu 
-                    goToSection={goToSection} 
-                    activeSection={activeSection}
-                />
-
-                <main className="container-inicio">
-                    <section id="inicio">      <Inicio goToSection={goToSection} /> </section>
-                    <section id="sobre">       <Sobre />                            </section>
-                    <section id="servicos">    <Servicos />                         </section>
-                    <section id="experiencia"> <Experiencia />                      </section>
-                    <section id="depoimentos"> <Depoimentos />                      </section>
-                    <section id="contato">     <Contato />                          </section>
+                <main className="main-content">
+                    <section id="inicio">
+                        <Inicio goToSection={goToSection} />
+                    </section>
+                    <section id="sobre"><Sobre /></section>
+                    <section id="servicos"><Servicos /></section>
+                    <section id="experiencia"><Experiencia /></section>
+                    <section id="depoimentos"><Depoimentos /></section>
+                    <section id="contato"><Contato /></section>
 
                     <Footer />
                 </main>
 
                 <ScrollToTop />
-
             </div>
         </>
     )

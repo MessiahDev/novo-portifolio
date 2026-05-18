@@ -1,6 +1,6 @@
 .container-depoimentos {
     background: var(--color-bg-primary);
-    padding: 85px 120px;
+    padding: 85px 300px;
     overflow: hidden;
 }
 
@@ -95,6 +95,41 @@
     text-overflow: ellipsis;
 }
 
+@media (max-width: 2560px) {
+    .container-depoimentos {
+        padding: 100px 300px;
+    }
+}
+
+@media (max-width: 1920px) {
+    .container-depoimentos {
+        padding: 90px 220px;
+    }
+}
+
+@media (max-width: 1680px) {
+    .container-depoimentos {
+        padding: 85px 180px;
+    }
+}
+
+@media (max-width: 1440px) {
+    .container-depoimentos {
+        padding: 80px 120px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .container-depoimentos {
+        padding: 70px 60px;
+    }
+
+    .depoimentos-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
 @media (max-width: 992px) {
     .container-depoimentos {
         padding: 70px 40px;
@@ -174,5 +209,32 @@
     .depoimento-foto {
         width: 40px;
         height: 40px;
+    }
+}
+
+@media (max-width: 360px) {
+    .container-depoimentos {
+        padding: 45px 12px;
+    }
+
+    .depoimento-card {
+        padding: 18px 14px;
+    }
+
+    .depoimento-texto {
+        font-size: 13px;
+    }
+
+    .depoimento-foto {
+        width: 38px;
+        height: 38px;
+    }
+
+    .depoimento-nome {
+        font-size: 13px;
+    }
+
+    .depoimento-empresa {
+        font-size: 11px;
     }
 }

@@ -1,4 +1,4 @@
-.inicio {
+.container-inicio {
     position: relative;
     height: 100vh;
     width: 100%;
@@ -182,6 +182,40 @@
     100% { opacity: 0; transform: translateY(20px); }
 }
 
+@media (max-width: 2560px) {
+    .inicio-content {
+        padding: 0 40px;
+    }
+}
+
+@media (max-width: 1920px) {
+    .inicio-content {
+        padding: 0 30px;
+    }
+}
+
+@media (max-width: 1680px) {
+    .inicio-content {
+        padding: 0 25px;
+    }
+}
+
+@media (max-width: 1440px) {
+    .inicio-content {
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .inicio-content {
+        padding: 0 20px;
+    }
+
+    .main-title {
+        font-size: clamp(38px, 7vw, 70px);
+    }
+}
+
 @media (max-width: 992px) {
     .parallax-bg {
         background-attachment: scroll;
@@ -189,5 +223,85 @@
 
     .scroll-area {
         bottom: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-title {
+        font-size: clamp(32px, 8vw, 55px);
+    }
+
+    .sub-title {
+        font-size: clamp(17px, 4vw, 26px);
+    }
+
+    .inicio-desc {
+        max-width: 420px;
+    }
+
+    .inicio-actions {
+        gap: 12px;
+    }
+
+    .cta-btn {
+        padding: 13px 24px;
+        font-size: 14px;
+    }
+
+    .scroll-area {
+        bottom: 25px;
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .inicio-content {
+        gap: 12px;
+    }
+
+    .main-title {
+        font-size: clamp(28px, 9vw, 48px);
+    }
+
+    .sub-title {
+        font-size: clamp(16px, 4.5vw, 24px);
+    }
+
+    .inicio-desc {
+        max-width: 360px;
+        font-size: clamp(12px, 1.5vw, 15px);
+    }
+
+    .cta-btn {
+        padding: 12px 22px;
+        font-size: 13.5px;
+        min-width: 140px;
+    }
+}
+
+@media (max-width: 360px) {
+    .inicio-content {
+        padding: 0 16px;
+        gap: 10px;
+    }
+
+    .main-title {
+        font-size: clamp(26px, 9.5vw, 42px);
+    }
+
+    .inicio-desc {
+        max-width: 320px;
+    }
+
+    .cta-btn {
+        padding: 11px 20px;
+        font-size: 13px;
+    }
+
+    .scroll-area {
+        bottom: 20px;
+        width: 45px;
+        height: 45px;
     }
 }

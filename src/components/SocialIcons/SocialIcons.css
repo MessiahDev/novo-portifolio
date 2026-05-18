@@ -4,6 +4,7 @@
     align-items: center;
     gap: 16px;
     padding-bottom: 16px;
+    width: 100%;
 }
 
 .social-icons-separator {
@@ -23,8 +24,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 32px;
-    height: 32px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     background: var(--color-border-subtle);
     border: 1px solid var(--color-border-subtle);
@@ -37,6 +38,60 @@
 .social-icons__link:hover {
     color: var(--color-accent-btn);
     border-color: var(--color-accent-btn);
+}
+
+@media (max-width: 2560px) {
+    .social-icons-wrapper {
+        gap: 18px;
+        padding-bottom: 20px;
+    }
+
+    .social-icons {
+        gap: 12px;
+    }
+
+    .social-icons__link {
+        width: 30px;
+        height: 30px;
+        font-size: 14px;
+    }
+}
+    
+@media (max-width: 1920px) {
+    .social-icons-wrapper {
+        gap: 16px;
+        padding-bottom: 18px;
+    }
+}
+
+@media (max-width: 1680px) {
+    .social-icons {
+        gap: 11px;
+    }
+}
+
+@media (max-width: 1440px) {
+    .social-icons-wrapper {
+        gap: 16px;
+        padding-bottom: 16px;
+    }
+
+    .social-icons__link {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .social-icons {
+        gap: 10px;
+    }
+
+    .social-icons__link {
+        width: 30px;
+        height: 30px;
+        font-size: 13px;
+    }
 }
 
 @media (max-width: 992px) {
@@ -59,5 +114,49 @@
         width: 28px;
         height: 28px;
         font-size: 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    .social-icons {
+        margin-right: 40px;
+        gap: 5px;
+    }
+
+    .social-icons__link {
+        width: 27px;
+        height: 27px;
+    }
+}
+
+@media (max-width: 480px) {
+    .social-icons {
+        margin-right: 30px;
+        gap: 4px;
+    }
+
+    .social-icons__link {
+        width: 26px;
+        height: 26px;
+        font-size: 11.5px;
+    }
+}
+
+@media (max-width: 360px) {
+    .social-icons {
+        margin-right: 22px;
+        gap: 4px;
+    }
+
+    .social-icons__link {
+        width: 24px;
+        height: 24px;
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 350px) {
+    .social-icons {
+        display: none;
     }
 }
