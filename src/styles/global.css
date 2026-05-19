@@ -28,6 +28,35 @@
     box-sizing: border-box;
 }
 
+* {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+p, 
+li, 
+.depoimento-texto, 
+.sobre-descricao, 
+.texto-principal,
+.contato-valor,
+.info-value.accent,
+textarea, 
+input {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
+
+img {
+    -webkit-user-drag: none;
+    user-drag: none;
+    -webkit-touch-callout: none;
+    pointer-events: auto;
+}
+
 html {
     scroll-behavior: auto;
     scrollbar-width: thin;
@@ -87,4 +116,10 @@ a {
 @keyframes focusFade {
     0%   { background-color: rgba(194, 64, 35, 0.08); }
     100% { background-color: transparent; }
+}
+
+@media (max-width: 992px) {
+    * {
+        -webkit-tap-highlight-color: transparent;
+    }
 }

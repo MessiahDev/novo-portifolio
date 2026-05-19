@@ -40,7 +40,9 @@ function DepoimentoCard({
                 <img
                     className="depoimento-foto"
                     src={foto}
-                    alt={nome}
+                    alt={`Foto de ${nome} da empresa ${empresa}`}
+                    loading="lazy"
+                    decoding="async"
                 />
 
                 <div className="depoimento-info">

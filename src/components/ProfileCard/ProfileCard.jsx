@@ -5,7 +5,15 @@ export default function ProfileCard({ onClick }) {
     return (
         <div className="profile-container" onClick={onClick}>
             <div className="profile-img-wrapper">
-                <img className="img-profile" src={alex} alt="Alex Messias" />
+                <img 
+                    className="img-profile" 
+                    src={alex} 
+                    alt="Alex Messias - Desenvolvedor Full-Stack"
+                    loading="eager"
+                    decoding="async"
+                    draggable="false"
+                    fetchPriority="high"
+                />
             </div>
             <h2 className="name-profile">Alex Messias</h2>
             <span className="role-profile">Full-Stack Developer</span>
