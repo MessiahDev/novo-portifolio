@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react"
+import { useAnalytics } from "../../hooks/useAnalytics"
 import "./Menu.css"
 
 export default function Menu({ goToSection, activeSection }) {
     const [isOpen, setIsOpen] = useState(false)
+    const { trackEvent } = useAnalytics()
 
     const openMenu = () => setIsOpen(true)
     const closeMenu = () => setIsOpen(false)
@@ -93,6 +95,7 @@ export default function Menu({ goToSection, activeSection }) {
                     href="https://wa.me/5521998138903"
                     target="_blank"
                     rel="noreferrer"
+                    onClick={() => trackEvent("Clique_Rede_Contato_Mobile", { meio_contato: "WhatsApp_MenuMobile_CTA" })}
                 >
                     Entrar em contato
                 </a>

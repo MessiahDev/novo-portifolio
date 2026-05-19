@@ -1,14 +1,16 @@
-import { goToSection } from "../../utils/Scroll"
 import ProfileCard from "../ProfileCard/ProfileCard"
 import NavBar from "../NavBar/NavBar"
 import SocialIcons from "../SocialIcons/SocialIcons"
 import "./Aside.css"
 
-export default function Aside({ activeSection }) {
+export default function Aside({ activeSection, goToSection }) {
     return (
         <aside className="main-aside">
+            {/* O ProfileCard agora usa a função rastreada para ir até o "inicio" */}
             <ProfileCard onClick={() => goToSection("inicio")} />
-            <NavBar activeSection={activeSection} goToSection={goToSection} />
+            
+            {/* A NavBar agora usa a função correta recebida do App.js */}
+            <NavBar goToSection={goToSection} activeSection={activeSection} />
             
             <div className="aside-icons">
                 <SocialIcons />

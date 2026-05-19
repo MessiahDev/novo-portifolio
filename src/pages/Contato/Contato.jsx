@@ -1,4 +1,5 @@
 import { FaWhatsapp, FaEnvelope, FaLinkedinIn } from "react-icons/fa"
+import { useAnalytics } from "../../hooks/useAnalytics"
 import SectionTitle from "../../components/SectionTitle/SectionTitle"
 import { CONTATO_INFO } from "../../constants/contato"
 import { useReveal } from "../../hooks/useReveal"
@@ -12,6 +13,7 @@ const ICON_MAP = {
 
 export default function Contato() {
     const ref = useReveal("section")
+    const { trackEvent } = useAnalytics()
 
     return (
         <div className="container-contato">
@@ -46,6 +48,7 @@ export default function Contato() {
                                 target="_blank"
                                 rel="noreferrer"
                                 className="contato-link"
+                                onClick={() => trackEvent("Clique_Rede_Contato", { meio_contato: label })}
                             >
                                 <span className="contato-icone">
                                     {ICON_MAP[icon]}

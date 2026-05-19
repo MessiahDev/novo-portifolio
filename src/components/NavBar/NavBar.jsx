@@ -1,7 +1,14 @@
 import { NAV_LINKS } from "../../constants/Navigation"
+import { useAnalytics } from "../../hooks/useAnalytics"
 import "./NavBar.css"
 
 export default function NavBar({ activeSection, goToSection }) {
+    const { trackEvent } = useAnalytics()
+
+    const handleNavClick = (id) => {
+        goToSection(id)
+    }
+
     return (
         <nav className="navbar">
             <ul className="navbar-list">
@@ -9,7 +16,7 @@ export default function NavBar({ activeSection, goToSection }) {
                     <li key={id}>
                         <a
                             className={`navbar-link${activeSection === id ? " navbar-link--active" : ""}`}
-                            onClick={() => goToSection(id)}
+                            onClick={() => handleNavClick(id)}
                         >
                             {label}
                         </a>
@@ -21,6 +28,7 @@ export default function NavBar({ activeSection, goToSection }) {
                     href="https://wa.me/5521998138903"
                     target="_blank"
                     rel="noreferrer"
+                    onClick={() => trackEvent("Clique_Rede_Contato", { meio_contato: "WhatsApp_NavBar_CTA" })}
                 >
                     Entrar em contato
                 </a>

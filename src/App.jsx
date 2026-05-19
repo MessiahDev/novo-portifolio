@@ -1,6 +1,9 @@
 import { useState } from "react"
 import "./styles/App.css"
 
+import { Analytics } from "@vercel/analytics/react"
+import { useAnalytics } from "./hooks/useAnalytics" // Importa o novo hook
+
 import { useActiveSection } from "./hooks/useActiveSection"
 import { goToSection } from "./utils/Scroll"
 
@@ -20,18 +23,25 @@ import Contato from "./pages/Contato/Contato"
 export default function App() {
     const [carregando, setCarregando] = useState(true)
     const activeSection = useActiveSection()
+    const { trackEvent } = useAnalytics()
+
+    const handleMenuNavigation = (sectionId) => {
+        goToSection(sectionId, (id) => {
+            trackEvent("Navegacao_Clique_Seccao", { secao_destino: id })
+        })
+    }
 
     return (
         <>
             {carregando && <LoadingScreen onComplete={() => setCarregando(false)} />}
 
             <div className="app-layout">
-                <Aside activeSection={activeSection} />
-                <Menu goToSection={goToSection} activeSection={activeSection} />
+                <Aside activeSection={activeSection} goToSection={handleMenuNavigation} />
+                <Menu goToSection={handleMenuNavigation} activeSection={activeSection} />
 
                 <main className="main-content">
                     <section id="inicio">
-                        <Inicio goToSection={goToSection} />
+                        <Inicio goToSection={handleMenuNavigation} />
                     </section>
                     <section id="sobre"><Sobre /></section>
                     <section id="servicos"><Servicos /></section>
@@ -44,6 +54,8 @@ export default function App() {
 
                 <ScrollToTop />
             </div>
+
+            <Analytics />
         </>
     )
 }

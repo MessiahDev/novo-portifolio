@@ -1,4 +1,5 @@
 import { FaWhatsapp } from "react-icons/fa"
+import { useAnalytics } from "../../hooks/useAnalytics"
 import SectionTitle from "../../components/SectionTitle/SectionTitle"
 import { useCountUp } from "../../hooks/useCountUp"
 import { STATS, INFO } from "../../constants/sobre"
@@ -19,6 +20,7 @@ export default function Sobre() {
     const bioRef = useReveal("section")
     const infoRef = useReveal("section")
     const statsRef = useReveal("section")
+    const { trackEvent } = useAnalytics()
 
     return (
         <div className="container-sobre">
@@ -69,6 +71,7 @@ export default function Sobre() {
                         href="https://wa.me/5521998138903"
                         target="_blank"
                         rel="noreferrer"
+                        onClick={() => trackEvent("Clique_Rede_Contato", { meio_contato: "WhatsApp_Sobre" })}
                     >
                         <FaWhatsapp /> Enviar mensagem
                     </a>

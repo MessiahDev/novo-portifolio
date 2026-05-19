@@ -4,7 +4,12 @@ function easeInOutCubic(t) {
         : 1 - Math.pow(-2 * t + 2, 3) / 2
 }
 
-export function goToSection(sectionId) {
+export function goToSection(sectionId, onNavigate) {
+
+    if (typeof onNavigate === "function") {
+        onNavigate(sectionId)
+    }
+
     const target = document.getElementById(sectionId)
     if (!target) return
 

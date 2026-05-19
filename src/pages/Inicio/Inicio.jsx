@@ -1,8 +1,11 @@
 import { FaChevronDown, FaWhatsapp } from "react-icons/fa"
 import { FaArrowDown } from "react-icons/fa6"
+import { useAnalytics } from "../../hooks/useAnalytics"
 import "./Inicio.css"
 
 export default function Inicio({ goToSection }) {
+    const { trackEvent } = useAnalytics()
+
     return (
         <section className="container-inicio">
             <img 
@@ -47,6 +50,8 @@ export default function Inicio({ goToSection }) {
                         target="_blank"
                         rel="noreferrer"
                         aria-label="Entrar em contato pelo WhatsApp"
+                        // Rastreia cliques no WhatsApp da tela de boas-vindas
+                        onClick={() => trackEvent("Clique_Rede_Contato", { meio_contato: "WhatsApp_Inicio_Hero" })}
                     >
                         <FaWhatsapp />
                         Fale comigo
