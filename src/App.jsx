@@ -2,7 +2,7 @@ import { useState } from "react"
 import "./styles/App.css"
 
 import { Analytics } from "@vercel/analytics/react"
-import { useAnalytics } from "./hooks/useAnalytics" // Importa o novo hook
+import { useAnalytics } from "./hooks/useAnalytics"
 
 import { useActiveSection } from "./hooks/useActiveSection"
 import { goToSection } from "./utils/Scroll"
@@ -55,7 +55,7 @@ export default function App() {
                 <ScrollToTop />
             </div>
 
-            <Analytics />
+            <Analytics debug={false} />
         </>
     )
 }
