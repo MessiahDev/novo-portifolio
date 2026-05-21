@@ -16,7 +16,6 @@
     font-weight: 600;
     color: var(--color-muted);
     opacity: 0.15;
-    user-select: none;
     white-space: nowrap;
 }
 

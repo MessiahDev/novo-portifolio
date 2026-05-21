@@ -35,7 +35,7 @@ function StackTag({ tech, index }) {
 export default function Experiencia() {
     return (
         <div className="container-experiencia">
-            <SectionTitle back="Experiências" front="Experiências" />
+            <SectionTitle back="EXPERIÊNCIAS" front="Experiências" />
 
             <div className="experiencias-grid">
                 {EXPERIENCIAS.map((exp, index) => (
