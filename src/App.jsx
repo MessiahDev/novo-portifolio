@@ -2,6 +2,7 @@ import { useState } from "react"
 import "./styles/App.css"
 
 import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/react"
 import { useAnalytics } from "./hooks/useAnalytics"
 
 import { useActiveSection } from "./hooks/useActiveSection"
@@ -56,6 +57,7 @@ export default function App() {
             </div>
 
             <Analytics debug={false} />
+            <SpeedInsights />
         </>
     )
 }
