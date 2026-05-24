@@ -1,13 +1,11 @@
-import { track } from "@vercel/analytics"
+import { track } from "@vercel/analytics/react"
 import { useCallback } from "react"
 
 export function useAnalytics() {
     const trackEvent = useCallback((eventName, properties = {}) => {
         if (!import.meta.env.PROD) return
 
-        track(eventName, properties).catch((error) => {
-            console.error("Erro ao enviar evento:", error)
-        })
+        track(eventName, properties)
     }, [])
 
     return { trackEvent }

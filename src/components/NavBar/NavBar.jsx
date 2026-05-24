@@ -15,6 +15,7 @@ export default function NavBar({ activeSection, goToSection }) {
                 {NAV_LINKS.map(({ id, label }) => (
                     <li key={id}>
                         <a
+                            href="#"
                             className={`navbar-link${activeSection === id ? " navbar-link--active" : ""}`}
                             onClick={() => handleNavClick(id)}
                         >
