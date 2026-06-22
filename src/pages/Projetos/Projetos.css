@@ -158,8 +158,27 @@
     line-height: 1.7;
 }
 
-.projeto-stack-label {
-    font-weight: 600;
+.projeto-stack-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 4px;
+}
+
+.projeto-chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 12px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 11px;
+    font-weight: 500;
+    transition: border-color 0.2s, color 0.2s;
+}
+
+.projeto-chip:hover {
+    border-color: var(--color-accent);
     color: var(--color-text-white);
 }
 
@@ -202,7 +221,6 @@
 
     .projeto-descricao,
     .projeto-destaque-item,
-    .projeto-stack { font-size: 12px; }
 
     .projeto-link {
         font-size: 11px;

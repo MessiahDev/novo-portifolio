@@ -56,10 +56,11 @@ function ProjetoCard({ nome, periodo, imagem, descricao, destaques, stack, links
                     ))}
                 </ul>
 
-                <p className="projeto-stack">
-                    <span className="projeto-stack-label">Stack:</span>{" "}
-                    {stack.join(" · ")}
-                </p>
+                <div className="projeto-stack-chips">
+                    {stack.map((tech, i) => (
+                        <span key={i} className="projeto-chip">{tech}</span>
+                    ))}
+                </div>
             </div>
         </div>
     )
