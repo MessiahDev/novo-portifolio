@@ -5,6 +5,7 @@ export const NAV_LINKS = [
     { id: "sobre",       label: "Sobre mim" },
     { id: "servicos",    label: "O que eu faço" },
     { id: "experiencia", label: "Experiências" },
+    { id: "projetos",    label: "Projetos" },
     { id: "depoimentos", label: "Depoimentos" },
     { id: "contato",     label: "Contato" },
 ]

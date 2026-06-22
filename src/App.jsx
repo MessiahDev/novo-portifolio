@@ -16,6 +16,7 @@ import Inicio from "./pages/Inicio/Inicio"
 import Sobre from "./pages/Sobre/Sobre"
 import Servicos from "./pages/Servicos/Servicos"
 import Experiencia from "./pages/Experiencia/Experiencia"
+import Projetos from "./pages/Projetos/Projetos"
 import Depoimentos from "./pages/Depoimentos/Depoimentos"
 import Contato from "./pages/Contato/Contato"
 
@@ -45,6 +46,7 @@ export default function App() {
                     <section id="sobre"><Sobre /></section>
                     <section id="servicos"><Servicos /></section>
                     <section id="experiencia"><Experiencia /></section>
+                    <section id="projetos"><Projetos /></section>
                     <section id="depoimentos"><Depoimentos /></section>
                     <section id="contato"><Contato /></section>
 
