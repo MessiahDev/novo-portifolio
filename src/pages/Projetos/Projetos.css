@@ -17,7 +17,6 @@
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    transition: border-color 0.2s;
 }
 
 .projeto-card:hover {

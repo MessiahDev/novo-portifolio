@@ -20,18 +20,18 @@ export function useReveal(type = "section", index = 0) {
 
     useEffect(() => {
         const config = REVEAL_CONFIG[type] || REVEAL_CONFIG.section
+        const el = ref.current
+        if (!el) return
+
+        const delay = config.delayStep ? index * config.delayStep : (config.delay ?? 0)
+        el.style.setProperty("--fade-delay", `${delay}ms`)
 
         const observer = new IntersectionObserver(
             ([entry]) => {
                 if (entry.isIntersecting) {
-                    const delay =
-                        config.delayStep ? index * config.delayStep : config.delay
-
-                    if (delay > 0) {
-                        entry.target.style.setProperty("--fade-delay", `${delay}ms`)
-                    }
-
-                    entry.target.classList.add("fade-up-init")
+                    requestAnimationFrame(() => {
+                        entry.target.classList.add("fade-up-init")
+                    })
                 } else if (entry.boundingClientRect.top > 0) {
                     entry.target.classList.remove("fade-up-init")
                 }
@@ -42,7 +42,7 @@ export function useReveal(type = "section", index = 0) {
             }
         )
 
-        if (ref.current) observer.observe(ref.current)
+        observer.observe(el)
 
         return () => observer.disconnect()
     }, [type, index])
