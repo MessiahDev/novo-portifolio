@@ -14,7 +14,7 @@ export const PROJETOS = [
         ],
         stack: ["C#", ".NET 9", "PostgreSQL", "Redis", "RabbitMQ", "React", "TypeScript", "Docker"],
         links: {
-            demo: "https://kyros-financeiro-web.vercel.app",
+            demo: "https://kyros-financeiro-web.vercel.app/login",
             backRepo: "https://github.com/MessiahDev/FinanceiroApi",
             frontRepo: "https://github.com/MessiahDev/financeiro-web",
         },
