@@ -92,10 +92,11 @@ export default function Menu({ goToSection, activeSection }) {
 
                 <a
                     className="nav-drawer__cta"
-                    href="https://wa.me/5521998138903"
+                    href="https://telegram.me/messiasalex"
+                    title="Telegram"
                     target="_blank"
                     rel="noreferrer"
-                    onClick={() => trackEvent("Clique_Rede_Contato_Mobile", { meio_contato: "WhatsApp_MenuMobile_CTA" })}
+                    onClick={() => trackEvent("Clique_Rede_Contato_Mobile", { meio_contato: "Telegram_MenuMobile_CTA" })}
                 >
                     Entrar em contato
                 </a>
