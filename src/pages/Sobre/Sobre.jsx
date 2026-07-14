@@ -1,4 +1,4 @@
-import { FaWhatsapp } from "react-icons/fa"
+import { FaTelegramPlane } from "react-icons/fa"
 import { useAnalytics } from "../../hooks/useAnalytics"
 import SectionTitle from "../../components/SectionTitle/SectionTitle"
 import { useCountUp } from "../../hooks/useCountUp"
@@ -68,12 +68,13 @@ export default function Sobre() {
 
                     <a
                         className="whatsapp-btn"
-                        href="https://wa.me/5521998138903"
+                        href="https://telegram.me/messiasalex"
+                        title=" Telegram"
                         target="_blank"
                         rel="noreferrer"
-                        onClick={() => trackEvent("Clique_Rede_Contato", { meio_contato: "WhatsApp_Sobre" })}
+                        onClick={() => trackEvent("Clique_Rede_Contato", { meio_contato: "Telegram_Sobre" })}
                     >
-                        <FaWhatsapp /> Enviar mensagem
+                        <FaTelegramPlane /> Enviar mensagem
                     </a>
                 </div>
             </div>

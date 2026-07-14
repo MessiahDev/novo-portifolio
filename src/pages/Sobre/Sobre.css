@@ -74,7 +74,8 @@
     gap: 8px;
     padding: 14px 28px;
     border-radius: 30px;
-    background: var(--color-accent-btn2);
+    /* background: var(--color-accent-btn2); */
+    background: var(--color-accent-btn3);
     color: var(--color-text-white);
     font-size: 15px;
     font-weight: 700;
@@ -84,7 +85,6 @@
 }
 
 .whatsapp-btn:hover {
-    background: var(--color-accent-btn2);
     color: var(--color-text-white);
     transform: translateY(-2px);
 }
