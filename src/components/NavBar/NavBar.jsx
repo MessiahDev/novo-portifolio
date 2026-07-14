@@ -27,10 +27,11 @@ export default function NavBar({ activeSection, goToSection }) {
                 <li className="navbar-cta-item">
                     <a
                         className="navbar-cta"
-                        href="https://wa.me/5521998138903"
+                        href="https://telegram.me/messiasalex"
+                        title="Telegram"
                         target="_blank"
                         rel="noreferrer"
-                        onClick={() => trackEvent("Clique_Rede_Contato", { meio_contato: "WhatsApp_NavBar_CTA" })}
+                        onClick={() => trackEvent("Clique_Rede_Contato", { meio_contato: "Telegram_NavBar_CTA" })}
                     >
                         Entrar em contato
                     </a>
