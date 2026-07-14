@@ -1,11 +1,15 @@
-import { FaWhatsapp, FaEnvelope, FaLinkedinIn } from "react-icons/fa"
-
 export const CONTATO_INFO = [
+    // {
+    //     icon: "FaWhatsapp",
+    //     label: "WHATSAPP",
+    //     valor: "(21) 99813-8903",
+    //     href: "https://wa.me/5521998138903",
+    // },
     {
-        icon: "FaWhatsapp",
-        label: "WHATSAPP",
-        valor: "(21) 99813-8903",
-        href: "https://wa.me/5521998138903",
+        icon: "FaTelegramPlane",
+        label: "TELEGRAM",
+        valor: "(21) 96898-8766",
+        href: "https://telegram.me/messiasalex",
     },
     {
         icon: "FaEnvelope",

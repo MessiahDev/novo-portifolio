@@ -1,4 +1,4 @@
-import { FaWhatsapp, FaEnvelope, FaLinkedinIn } from "react-icons/fa"
+import { FaTelegramPlane, FaEnvelope, FaLinkedinIn } from "react-icons/fa"
 import { useAnalytics } from "../../hooks/useAnalytics"
 import SectionTitle from "../../components/SectionTitle/SectionTitle"
 import { CONTATO_INFO } from "../../constants/contato"
@@ -6,7 +6,8 @@ import { useReveal } from "../../hooks/useReveal"
 import "./Contato.css"
 
 const ICON_MAP = {
-    FaWhatsapp: <FaWhatsapp />,
+    // FaWhatsapp: <FaWhatsapp />,
+    FaTelegramPlane: <FaTelegramPlane />,
     FaEnvelope: <FaEnvelope />,
     FaLinkedinIn: <FaLinkedinIn />,
 }
