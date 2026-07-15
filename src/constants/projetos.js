@@ -18,6 +18,6 @@ export const PROJETOS = [
             backRepo: "https://github.com/MessiahDev/FinanceiroApi",
             frontRepo: "https://github.com/MessiahDev/financeiro-web",
         },
-        aviso: "A API está hospedada no plano gratuito do Render e pode levar até 50 segundos para acordar na primeira visita do dia.",
+    aviso: "A API está hospedada no plano gratuito do Render e pode levar até 50 segundos para acordar na primeira visita do dia. Caso apareça 404 NOT FOUND, feche a aba e tente novamente.",
     },
 ]

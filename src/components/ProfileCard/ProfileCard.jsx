@@ -6,7 +6,6 @@ export default function ProfileCard({ onClick }) {
     const { trackEvent } = useAnalytics()
 
     const handleProfileClick = () => {
-        // Registra o clique no card de perfil
         trackEvent("Clique_Perfil_Card")
 
         if (typeof onClick === "function") {
